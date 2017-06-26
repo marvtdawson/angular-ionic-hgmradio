@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <!--button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button-->
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- display page content -->
+<ion-content padding>
+  <div class="page-content-top">
+    <p>Welcome back!</p>
+  </div>
+
+  <form #login="ngForm" (ngSubmit)="onSubmit(login)" >
+    <ion-list>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" required ></ion-input>
+    </ion-item>
+
+    <div class="form-button-wrapper">
+      <button ion-button color="secondary" block>Login</button>
+    </div>
+
+  </ion-list>
+  </form>
+
+  <div class="login-signup-forgot-text">
+    <p>
+      <a [navPush]="pushForgotPasswordPage"> Forgot password?</a>
+      <span>or <a [navPush]="pushRegisterPage">Sign Up!</a></span>
+    </p>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ siteName }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- display page content -->
+<ion-content padding>
+  <div class="page-content-top">
+    <h1>{{ pageTitle }}</h1>
+    <h5>Our History</h5>
+    <p> The history of this company is so damn awesome!</p>
+  </div>
+
+  <div>
+    <p>Got some great news you would like to share with us.  We love to hear all about it.</p>
+    <p><a [navPush]="pushContactPage"> Contact us</a> with great news.</p>
+  </div>
+
+</ion-content>
+
+<ion-footer no-lines no-border>
+  <ion-toolbar position="bottom">
+    <!-- Advanced: explicity set the icon for each platform -->
+    <ion-icon ios="ios-settings" md="md-settings" class="footer-icon"></ion-icon>
+
+    <!-- Advanced: explicity set the icon for each platform -->
+    <ion-icon ios="ios-home" md="md-home" class="footer-icon" [navPush]="pushHomePage"></ion-icon>
+
+    <!-- Advanced: explicity set the icon for each platform -->
+    <ion-icon ios="ios-contact" md="md-contact" class="footer-icon"></ion-icon>
+
+  </ion-toolbar>
+</ion-footer>

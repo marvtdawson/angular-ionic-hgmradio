@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- display page content -->
+<ion-content padding>
+  <div class="page-content-top">
+    <p>
+     Here at {{ siteName }} we love hearing from you.
+    </p>
+    <p>
+      Please contact us and let us know what you think, or how we can improve our app, site, products or service to you.
+    </p>
+
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>State</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>City</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Message</ion-label>
+      <ion-textarea type="text"></ion-textarea>
+    </ion-item>
+
+    <div class="form-button-wrapper">
+      <button ion-button color="secondary" block>SEND</button>
+    </div>
+
+  </ion-list>
+
+</ion-content>

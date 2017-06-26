@@ -14,3 +14,28 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+$background-color: (base-bg-color: #000);
+
+.page-content-top{
+  border: none;
+
+  p{
+    font-size:18px;
+  }
+}
+
+.form-button-wrapper{
+  margin-top: 20px;
+}
+
+.login-signup-forgot-text{
+  font-size: 16px;
+}
+
+ion-footer ion-icon{
+  margin-left:21%;
+  font-size: 2em;
+  height: 40px;
+  color: #FFFFFF;
+}

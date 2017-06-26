@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- display page content -->
+<ion-content padding>
+
+  <div class="page-content-top">
+    <p>
+      Sign up and start enjoying the convenience of {{ siteName }} services.
+    </p>
+  </div>
+
+  <ion-list inset>
+    <ion-item>
+      <ion-label for="regName" floating>First Name</ion-label>
+      <ion-input type="text" name="regFName"  id="regFName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" id="regLName" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" id="regEmail_1"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Confirm Email</ion-label>
+      <ion-input type="text" id="regEmail_2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" id="regPw"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Terms & Conditions</ion-label>
+      <ion-checkbox color="dark" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <div class="form-button-wrapper">
+      <button ion-button color="secondary" block>Register</button>
+    </div>
+
+  </ion-list>
+
+  <div>
+    <p>
+      Already a member? <a [navPush]="pushLoginPage">Login</a>
+    </p>
+  </div>
+
+</ion-content>
