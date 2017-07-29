@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, ModalController, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { HttpModule } from '@angular/http';
+//import { HttpModule } from '@angular/http';
 
 
 import { HomePage } from '../pages/home/home';
@@ -55,7 +55,7 @@ export class MyApp {
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;
       } else {
-        this.rootPage = LoginPage;
+        this.rootPage = SplashHomePage;
       }
       this.loader.dismiss();
     });
