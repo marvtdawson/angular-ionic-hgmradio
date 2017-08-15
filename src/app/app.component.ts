@@ -2,17 +2,17 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, ModalController, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { HttpModule } from '@angular/http';
+//import { Storage } from '@ionic/storage';
 
 
 import { HomePage } from '../pages/home/home';
-//import { ListPage } from '../pages/list/list';
 import { AboutPage } from "../pages/about/about";
 import { ContactUsPage } from "../pages/contact-us/contact-us";
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { AuthProvider } from "../providers/auth/auth";
+import {RadioPage} from "../pages/radio/radio";
 
 
 @Component({
@@ -21,9 +21,9 @@ import { AuthProvider } from "../providers/auth/auth";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SplashHomePage; // by default any is = HomePage; - using LoginPage for Authenticating p
+  rootPage: any = SplashHomePage; // by default any is = HomePage; - using LoginPage for Authenticating page
   loader: any;
-  siteName = 'HGM Radio';
+  siteName: string = 'HGM Radio';
   appVersion = 'v1.2';
   pushHomePage = HomePage;
 
@@ -34,7 +34,8 @@ export class MyApp {
               public splashScreen: SplashScreen,
               public modalCtrl: ModalController,
               public auth: AuthProvider,
-              public loadingCtrl: LoadingController,) {
+              public loadingCtrl: LoadingController,
+              /*public secureStorage: Storage*/) {
 
     this.initializeApp();
 
@@ -42,7 +43,6 @@ export class MyApp {
     this.pages = [
       {title: 'Home', component: HomePage},
       {title: 'About', component: AboutPage},
-      //{ title: 'List', component: ListPage },
       {title: 'Contact Us', component: ContactUsPage},
       {title: 'Sign Up', component: RegisterPage},
       {title: 'Member Login', component: LoginPage},
@@ -53,13 +53,12 @@ export class MyApp {
     this.auth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
-        this.rootPage = SplashHomePage;
+        this.rootPage = RadioPage;
       } else {
-        this.rootPage = SplashHomePage;
+        this.rootPage = RadioPage;
       }
       this.loader.dismiss();
     });
-
   }
 
   presentLoading() {

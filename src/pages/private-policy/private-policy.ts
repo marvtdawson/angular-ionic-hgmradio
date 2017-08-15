@@ -8,5 +8,5 @@ import { Component} from "@angular/core";
 export class PrivatePolicyPage{
   constructor(){}
   pageTitle = "Private Policy";
-  siteName = 'Who\'s Laundry';
+  siteName = 'HGM Radio';
 }

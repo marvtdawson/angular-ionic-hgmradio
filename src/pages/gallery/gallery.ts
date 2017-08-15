@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SiteDataProvider} from "../../providers/site-data/site-data";
 
 @Component({
   selector: "gallery",
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class GalleryPage {
-  constructor() {}
-  pageTitle = "Gallery";
-  siteName = 'Who\'s Laundry';
+  constructor(public siteData: SiteDataProvider) {}
+  pageTitle: string = "Gallery";
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
 }

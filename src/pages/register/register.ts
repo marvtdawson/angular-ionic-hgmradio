@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginPage } from '../../pages/login/login';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'register',
@@ -7,12 +7,8 @@ import { LoginPage } from '../../pages/login/login';
 })
 
 export class RegisterPage{
-
   constructor(){}
   pageTitle = 'Sign Up';
-  siteName = 'Who\'s Laundry';
+  siteName = 'HGM Radio';
   pushLoginPage = LoginPage;
-
-  //currRegMemEmail = localStorage.setItem('regUserEmail', 'marvintdawson@gmail.com');
 }
-

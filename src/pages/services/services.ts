@@ -9,5 +9,5 @@ export class ServicesPage{
   constructor(){}
 
   pageTitle = 'Services';
-  siteName = 'Who\'s Laundry';
+  siteName = 'HGM Radio';
 }

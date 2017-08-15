@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SiteDataProvider} from "../../providers/site-data/site-data";
 
 @Component({
   selector: 'forgot-password',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class ForgotPasswordPage{
-  constructor(){}
-  pageTitle = 'Forgot Password';
-  siteName = 'Who\'s Laundry';
+  constructor(public siteData: SiteDataProvider){}
+  pageTitle: string = 'Forgot Password';
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
 
  /*function resetUserPassword(){
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SiteDataProvider} from "../../providers/site-data/site-data";
 
 @Component({
   selector: 'contact-us',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class ContactUsPage {
-  constructor(){}
-  pageTitle = 'Contact Us';
-  siteName = 'Who\'s Laundry';
+  constructor(public siteData: SiteDataProvider){}
+  pageTitle: string = 'Contact Us';
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
 }

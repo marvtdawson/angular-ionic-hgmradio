@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class SubscribePage {
   constructor() {}
   pageTitle = 'Subscribe';
-  siteName = 'Who\'s Laundry';
+  siteName = 'HGM Radio';
 }

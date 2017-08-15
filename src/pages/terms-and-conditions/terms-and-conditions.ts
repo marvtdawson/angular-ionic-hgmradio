@@ -8,5 +8,5 @@ import { Component } from "@angular/core";
 export class TermsAndConditionsPage{
   constructor(){}
   pageTitle = 'Terms & Conditions';
-  siteName = 'Who\'s Laundry';
+  siteName = 'HGM Radio';
 }

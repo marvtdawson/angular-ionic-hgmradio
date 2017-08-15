@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SiteDataProvider } from "../../providers/site-data/site-data"
 
 @Component({
   selector: 'admin-login',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
 })
 
 export class AdminLoginPage {
-  constructor() {}
+  constructor(public siteData: SiteDataProvider ) {}
   pageTitle = 'Admin Login';
-  siteName = 'Who\'s Laundry';
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
 }

@@ -1,27 +1,29 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { SiteDataProvider } from "../../providers/site-data/site-data";
 
-/**
- * Generated class for the SplashHomePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-splash-home',
   templateUrl: 'splash-home.html',
 })
+
 export class SplashHomePage {
 
-  siteName = 'HGM Radio';
-  appVersion = 'v1.2';
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public secureStorage: Storage,
+              public siteData: SiteDataProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SplashHomePage');
+  // static site data
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
+
+
+  getData() {
+    console.log('Get Name');
   }
 
 }

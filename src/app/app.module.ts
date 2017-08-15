@@ -2,11 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from "@angular/http";
+import { Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
+//import { SecureStorage, SecureStorageObject} from "@ionic-native/secure-storage";
+import { Media } from "@ionic-native/media";
+import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
+
+import { SiteDataProvider } from "../providers/site-data/site-data";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AboutPage } from "../pages/about/about";
@@ -24,6 +30,8 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { AuthProvider } from '../providers/auth/auth';
 import { SplashHomePage } from "../pages/splash-home/splash-home";
+import { RadioPage } from "../pages/radio/radio"
+
 
 @NgModule({
   declarations: [
@@ -44,11 +52,14 @@ import { SplashHomePage } from "../pages/splash-home/splash-home";
     TermsAndConditionsPage,
     BlogPage,
     SplashHomePage,
+    RadioPage,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,12 +80,16 @@ import { SplashHomePage } from "../pages/splash-home/splash-home";
     TermsAndConditionsPage,
     BlogPage,
     SplashHomePage,
+    RadioPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    SiteDataProvider,
+    Media,
+    Storage
   ]
 })
 export class AppModule {}

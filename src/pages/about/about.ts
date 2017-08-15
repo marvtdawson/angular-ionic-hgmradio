@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ContactUsPage} from '../../pages/contact-us/contact-us';
+import { ContactUsPage} from '../contact-us/contact-us';
+import { SiteDataProvider } from "../../providers/site-data/site-data"
 
 @Component({
   selector: 'about',
@@ -7,9 +8,11 @@ import { ContactUsPage} from '../../pages/contact-us/contact-us';
 })
 
 export class AboutPage {
-  constructor() {}
-  pageTitle = 'About';
-  contactus = './contact-us.html';
+  constructor(public siteData: SiteDataProvider) {}
+
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
+  pageTitle: string = 'About';
   pushContactPage = ContactUsPage;
-  siteName = 'Who\'s Laundry';
+
 }

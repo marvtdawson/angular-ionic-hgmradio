@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ForgotPasswordPage } from '../../pages/forgot-password/forgot-password';
 import { RegisterPage } from '../../pages/register/register';
 import { NgForm } from "@angular/forms";
+import {SiteDataProvider} from "../../providers/site-data/site-data";
 
 @Component({
   selector: 'login',
@@ -9,15 +10,15 @@ import { NgForm } from "@angular/forms";
 })
 
 export class LoginPage{
-  constructor(){}
-  pageTitle = 'Member Login';
-  siteName = 'Who\'s Laundry';
+  constructor(public siteData: SiteDataProvider){}
+  pageTitle: string = 'Member Login';
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
   pushForgotPasswordPage = ForgotPasswordPage;
   pushRegisterPage = RegisterPage;
 
-  onSubmit(login: NgForm){
+  onSubmit(login: NgForm){}
 
-  }
 }
 
 
