@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, ModalController, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SiteDataProvider } from "../providers/site-data/site-data";
 //import { Storage } from '@ionic/storage';
 
 
@@ -23,8 +24,8 @@ export class MyApp {
 
   rootPage: any = SplashHomePage; // by default any is = HomePage; - using LoginPage for Authenticating page
   loader: any;
-  siteName: string = 'HGM Radio';
-  appVersion = 'v1.2';
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
   pushHomePage = HomePage;
 
   pages: Array<{ title: string, component: any }>;
@@ -35,6 +36,7 @@ export class MyApp {
               public modalCtrl: ModalController,
               public auth: AuthProvider,
               public loadingCtrl: LoadingController,
+              public siteData: SiteDataProvider,
               /*public secureStorage: Storage*/) {
 
     this.initializeApp();
@@ -43,9 +45,9 @@ export class MyApp {
     this.pages = [
       {title: 'Home', component: HomePage},
       {title: 'About', component: AboutPage},
-      {title: 'Contact Us', component: ContactUsPage},
       {title: 'Sign Up', component: RegisterPage},
       {title: 'Member Login', component: LoginPage},
+      {title: 'Contact Us', component: ContactUsPage}
     ];
 
     this.presentLoading();
@@ -53,14 +55,17 @@ export class MyApp {
     this.auth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
-        this.rootPage = RadioPage;
+        this.rootPage = SplashHomePage;
       } else {
-        this.rootPage = RadioPage;
+        this.rootPage = SplashHomePage;
       }
       this.loader.dismiss();
     });
   }
 
+  /**
+   * show gif
+   */
   presentLoading() {
     this.loader = this.loadingCtrl.create({
       content: "Authenticating..."

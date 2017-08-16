@@ -1,5 +1,1349 @@
 page-radio {
-  audio::-internal-media-controls-download-button {
-    display:none;
+  /*
+  * Licensed to the Apache Software Foundation (ASF) under one
+  * or more contributor license agreements.  See the NOTICE file
+  * distributed with this work for additional information
+  * regarding copyright ownership.  The ASF licenses this file
+  * to you under the Apache License, Version 2.0 (the
+  * "License"); you may not use this file except in compliance
+  * with the License.  You may obtain a copy of the License at
+  *
+  * http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing,
+  * software distributed under the License is distributed on an
+  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  * KIND, either express or implied.  See the License for the
+  * specific language governing permissions and limitations
+  * under the License.
+  */
+  * {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
   }
+
+  body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#000;
+    /*  background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+     background-image:-webkit-gradient(
+         linear,
+         left top,
+         left bottom,
+         color-stop(0, #A7A7A7),
+         color-stop(0.51, #E4E4E4)
+     ); */
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+  }
+  .connection-error{
+    color: red;
+    font-size: 9px;
+    font-family: Arial;
+  }
+  /* ############################# START 1366 PX ############################### */
+  @media(max-width: 1366px){
+    /* body{
+          background-color: #000;
+      } */
+    .appWrapper{
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+    }
+    .headerWrapper{
+      width: 100%;
+      position: relative;
+      z-index:1000;
+    }
+    .homePage-logo-wrapper{
+      width: 100%;
+      margin: 75px auto 0;
+      text-align: center;
+    }
+    .homePage-logo-size{
+      width: 300px;
+      height: 150px;
+    }
+    .player-logo-size{
+      width: 45%;
+      height: 75px;
+      margin: 0 auto 0;
+    }
+    /* #### START PLAYER #### */
+    #appHeader-logo{
+      width: 60%;
+      margin: 0 auto 0;
+      text-align: center;
+    }
+    .player-info-wrapper{
+      width: 100%;
+      min-height: 100px;
+      float: left;
+      margin-top: 0px;
+      margin-bottom: 35px;
+    }
+    .artist-pic-wrapper{
+      width: 20%;
+      min-height: 125px;
+      margin: 0px 0px 0px 100px;
+      float: left;
+      text-align: center;
+    }
+    .artist-pic-size {
+      width: 100%;
+      height: 130px;
+      margin: 0 auto 0;
+    }
+    .artist-info-wrapper {
+      width: 36%;
+      height: 250px;
+      border: 1px groove #008000;
+      background-color: #0c0c0c;
+      border-radius: 5px;
+      margin: 50px 89px 0px 70px;
+      float: left;
+    }
+    .artist-info-text-outer {
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+    }
+
+
+
+    /* #### START NOW PLAYING  #### */
+    .nowPlaying-wrapper{
+      width: 100%;
+      margin: 0 auto 20px;
+      padding: 3px;
+      clear: both;
+    }
+    .nowPlaying-text-wrapper{
+      width: 90%;
+      text-align: center;
+      margin: 0 auto 0;
+    }
+    .nowPlaying-inner-text{
+      color: #FFF;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .nowPlaying-outer-text{
+      color: #008000;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 16px;
+      clear: both;
+    }
+
+    /* #### START PLAYER BUTTONS  #### */
+    button{ border:none; cursor:pointer; outline:none; }
+    button#playpausebtn{
+      background:url('../assets/img/player/pause_button.png') no-repeat;
+      width:12px;
+      height:14px;
+      margin: 22px 10px 0px 0px ;
+      float: left;
+    }
+    button#mutebtn{
+      background:url('../../assets/img/player/unmute_button.png') no-repeat;
+      width:5px;
+      height:14px;
+      margin: 22px 10px 0px 0px ;
+      float: left;
+    }
+    div#timebox{
+      display: block;
+      float: left;
+      width: 100px;
+      margin: 20px 10px 0px 0px ;
+      background: #000;
+      text-align: center;
+      color: #008000;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 11px;
+    }
+    .seekslider-wrapper{
+      width: 180px;
+      display: block;
+      float: left;
+      margin: 20px 10px 0px 0px ;
+      color: white;
+    }
+    #seekslider{
+
+    }
+    .volumslider-wrapper{
+      width: 180px;
+      display: block;
+      float: left;
+      margin: 20px 10px 0px 0px ;
+    }
+    #volumeslider{
+
+    }
+    input[type="range"]::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      border-radius: 4px;
+      height: 20px;
+      width: 20px;
+      margin-top: 0px;
+      cursor: pointer;
+      border-radius: 1px solid grey;
+      box-shadow: 1px 1px 1px #000000;
+    }
+    input[type=range]::-moz-range-thumb{
+      border-radius: 4px;
+      height: 20px;
+      width: 10px;
+      cursor: pointer;
+
+    }
+    /* #### START REGISTER FORM #### */
+    .formWrapper {
+      width: 65%;
+      margin: 0px auto 0px;
+      text-align: right;
+      background-color: #171616;
+      padding: 20px;
+      border-radius:7px;
+    }
+    .already-member-wrapper{
+      float: right;
+      right: 43px;
+      width: 182px;
+      border: 1px solid blue;
+      position: relative;
+      top: -16px;
+    }
+    .already-member-text{
+      font-size: 12px;
+      font-family: Arial;
+      color: #363606;
+    }
+    .member-login{
+      color: #ffffff;
+      float: right;
+      right: 20px;
+      top: -15px;
+      position: relative;
+    }
+    .page-title-h2-wrapper{
+      width: 20%;
+      margin: 0 auto 0;
+    }
+    h2{
+      color: #fff;
+      margin: 0 0 0 36px;
+    }
+    .app-fields-outer{
+      height: 35px;
+      margin-bottom: 20px;
+    }
+    .regTandC{
+      float: left;
+      margin-left: 10px;
+    }
+    .regTandC_text{
+      float: left;
+      margin-left: 10px;
+      margin-top: 3px;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version-wrapper{
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+    .app-version-text{
+      width: 40%;
+      margin: 0 auto 0;
+      color: #2ecc71;
+      font-size: 8px;
+    }
+
+    /* #### START AD BANNER #### */
+    .cbc{
+      display: none;
+    }
+    .abgc{
+      display: none;
+    }
+    #adDiv{
+      position: relative;
+      z-index: 200;
+    }
+    #adDiv-wrapper{
+      width: 25.5%;
+      min-height: 250px;
+      margin: 0 auto 0;
+      position: absolute;
+      z-index: 200;
+      border: 1px solid green;
+    }
+    .adDiv-header{
+      width: 100%;
+      height: 25px;
+      margin: 0 auto 0;
+      background-color: #0c0c0c;
+      border-radius: 7px;
+    }
+    .adDiv-support-Wrapper{
+      width: 90%;
+      position: relative;
+      float: left;
+      height: 25px;
+    }
+    .adDiv-support-text{
+      color: #545454;
+      font-size: 9px;
+      font-family: Arial;
+      top: 7px;
+      position: relative;
+      left: 5px;
+    }
+    .closeAd-button-wrapper{
+      float: right;
+      right: 5px;
+      margin-top: 3px;
+      position: relative;
+    }
+    #adDiv-Close-button{
+      float: right;
+      right: 10px;
+      color: #FF0303;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      font-size: 9px;
+      font-weight: bold;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+
+      top: 3px;
+    }
+    #adDivinfo{
+      width: 86%;
+      margin: 0 auto 0;
+      border: 2px solid red;
+    }
+  }
+
+  /* ############################## START 768 PX ################################# */
+  @media(max-width: 768px){
+    .headerWrapper {
+      width: 100%;
+      position: absolute;
+      z-index: 2500;
+    }
+    .header-logoWrapper{
+      width: 100%;
+      margin: 5px auto 20px;
+    }
+    .appWrapper{
+      width: 100%;
+      height: 0px;
+      border: none;
+    }
+    /* #### START PLAYER #### */
+    #appHeader-logo{
+      width: 35%;
+      height: 70px;
+      margin: 0 auto 0;
+      text-align: center;
+    }
+    .app-fields-outer{
+      height: 43px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+    .player-logo-size {
+      width: 65%;
+      height: 70px;
+    }
+    .homePage-logo-wrapper{
+      margin: 175px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 45%;
+      height: 150px;
+    }
+
+    div#timebox{
+      display: block;
+      float: left;
+      width: 100px;
+      margin: 20px 10px 0px 0px ;
+      background: #000;
+      text-align: center;
+      color: #008000;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    /* #### START PLAYER #### */
+    .player-info-wrapper {
+      width: 93%;
+      margin: 150px 0 35px 10px;
+      position: absolute;
+      z-index: 0;
+    }
+    .artist-pic-wrapper {
+      width: 35%;
+      min-height: 125px;
+      margin: 0px 0px 0px 45px;
+    }
+    .artist-pic-size {
+      height: 300px;
+    }
+    .artist-info-wrapper {
+      width: 54%;
+      height: 300px;
+      margin: 0px 0px 30px 12px;
+    }
+    .artist-info-text-outer{
+
+    }
+    /* #### START CONTROLLER #### */
+    .controller-wrapper{
+      width: 44%;
+      margin: 0 auto 0;
+
+    }
+    .controlWrapper{
+
+    }
+    #audio-controls{
+      margin:0 auto 0;
+    }
+    .control-wrapper{
+      width: 100%;
+    }
+    .control-assest{
+      margin: 0 auto 0;
+      width: 70%;
+    }
+    .seekslider-wrapper {
+      width: 275px;
+      margin: 20px 10px 0px 0px;
+    }
+    button#playpausebtn {
+      margin: 2px 15px 0px 0px;
+    }
+    #seekslider {
+      width: 54%;
+      float: left;
+      margin: 0px 10px 0px 0px;
+    }
+    button#mutebtn {
+      margin: 5px 15px 0px 0px;
+    }
+    #curtimetext{
+      width: 12%;
+      float: left;
+      margin: 2px 10px 0 0;
+    }
+    #durtimetext{
+      float: left;
+      margin: 3px 4px 0 2px;
+    }
+    .timebox-wrapper{
+      float: left;
+      color: white;
+      margin: 24px 0 0 15px;
+      font-size: 15px;
+    }
+    .volumslider-wrapper {
+      width: 40%;
+      margin: 16px 10px 0px 0px;
+    }
+    #volumeslider {
+      width: 75%;
+    }
+
+    /* #### START AD BANNER #### */
+    #adDiv-wrapper{
+      width: 90%;
+      display: none;
+    }
+    #adDivinfo {
+      width: 93%;
+      min-height: 220px;
+      margin: 0px auto 0;
+      border: 2px solid #F00;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+    #adDiv-Close-button{
+      float: right;
+      right: 10px;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      font-size: 9px;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      position: relative;
+      top: 3px;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version-text {
+      width: 20%;
+      padding: 2px;
+      font-size: 8px;
+    }
+
+  }
+  /* ############################# START 737 PX x 767 PX ############################### */
+  @media(min-width: 737px) and (max-width: 767px){
+
+    .page-title-h2-wrapper{
+      width: 20%;
+      margin: 0 auto 0;
+    }
+
+  }
+  /* ############################# START 736 PX ############################### */
+  @media(max-width: 736px) {
+
+    .page-title-h2-wrapper {
+      width: 20%;
+      margin: 0 auto 0;
+    }
+
+    /* #### START PLAYER #### */
+    .player-info-wrapper {
+      width: 93%;
+      margin: 115px 0 35px 10px;
+    }
+    .artist-pic-wrapper {
+      width: 35%;
+      min-height: 125px;
+      margin: 0px 0px 0px 45px;
+    }
+    .artist-pic-size {
+      height: 300px;
+    }
+    .artist-info-wrapper {
+      width: 54%;
+      height: 300px;
+      margin: 0px 0px 30px 12px;
+    }
+    .artist-info-text-outer{
+
+    }
+    .control-wrapper{
+      width: 100%;
+    }
+    .control-assest{
+      margin: 0 auto 0;
+      width: 70%;
+    }
+    .seekslider-wrapper {
+      width: 275px;
+      margin: 20px 10px 0px 0px;
+    }
+    button#playpausebtn {
+      margin: 2px 15px 0px 0px;
+    }
+    #seekslider {
+      width: 54%;
+      float: left;
+      margin: 0px 10px 0px 0px;
+    }
+    button#mutebtn {
+      margin: 5px 15px 0px 0px;
+    }
+    #curtimetext{
+      width: 12%;
+      float: left;
+      margin: 2px 10px 0 0;
+    }
+    #durtimetext{
+      float: left;
+      margin: 3px 4px 0 2px;
+    }
+    .timebox-wrapper{
+      float: left;
+      color: white;
+      margin: 24px 0 0 15px;
+      font-size: 15px;
+    }
+    .volumslider-wrapper {
+      width: 40%;
+      margin: 16px 10px 0px 0px;
+    }
+    #volumeslider {
+      width: 75%;
+    }
+
+  }
+
+  /* ############################# START 638PX x 735 PX ############################### */
+  @media(min-width: 641px) and (max-width: 735px){
+
+    .page-title-h2-wrapper{
+      width: 20%;
+      margin: 0 auto 0;
+    }
+
+  }
+
+  /* ############################# START 640 PX ############################### */
+  @media(max-width: 640px){
+    .homePage-logo-wrapper{
+      width: 100%;
+      margin: 80px auto 35px;
+    }
+    .homePage-logo-size{
+      width: 50%;
+      height: 135px;
+    }
+    .player-app-logo-wrapper{
+      width: 50%;
+      margin: 10px auto 0;
+      text-align: center;
+    }
+    .player-logo-size{
+      width: 60%;
+      height: 65px;
+    }
+    .hgmPlayer-logo-size{
+      width: 100px;
+      height: 100px;
+      margin: 10px auto 0px;
+    }
+    .homePage-button{
+      width: 10%;
+      margin: 30px auto 0;
+    }
+    /*#### START PLAYER ####*/
+    .player-info-wrapper {
+      width: 93%;
+      margin: 115px 0 35px 10px;
+    }
+    .artist-pic-wrapper{
+      width: 20%;
+      min-height: 125px;
+      margin: 0px 0px 0px 100px;
+      float: left;
+      text-align: center;
+    }
+    .artist-pic-size {
+      width: 100%;
+      height: 130px;
+      margin: 0 auto 0;
+    }
+    .artist-info-wrapper{
+      width: 40%;
+      min-height: 125px;
+      border-radius: 5px;
+      margin: 0px 0px 0px 65px;
+      float: left;
+    }
+    .artist-info-text-outer{
+      color: #fff;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    .artist-info-text-inner{
+      color: #008000;
+      padding: 5px;
+      margin-top: 5px;
+    }
+    /* #### START NOW PLAYING  #### */
+    .nowPlaying-text-wrapper{
+      width: 60%;
+      text-align: center;
+      margin: 0 auto 0;
+    }
+    .nowPlaying-inner-text{
+      font-size: 16px;
+    }
+    .nowPlaying-outer-text{
+      font-size: 16px;
+    }
+    /* #### START CONTROLLER #### */
+    .controller-wrapper{
+      width: 85%;
+      margin: 0 auto 0;
+    }
+
+
+    /* #### START AD BANNER #### */
+    .cbc{
+      display: none;
+    }
+    .abgc{
+      display: none;
+    }
+    #adDiv{
+      position: relative;
+      z-index: 200;
+    }
+    #adDiv-wrapper{
+      width: 55%;
+      min-height: 250px;
+      margin: 0 0 0 115px;
+      position: absolute;
+      z-index: 200;
+      border: 1px solid green;
+    }
+    .adDiv-header{
+      width: 100%;
+      height: 25px;
+      margin: 0 auto 0;
+      background-color: #0c0c0c;
+      border-radius: 7px;
+    }
+    .adDiv-support-Wrapper{
+      width: 90%;
+      position: relative;
+      float: left;
+      height: 25px;
+    }
+    .adDiv-support-text{
+      color: #545454;
+      font-size: 9px;
+      font-family: Arial;
+      top: 7px;
+      position: relative;
+      left: 5px;
+    }
+    .closeAd-button-wrapper{
+      float: right;
+      right: 5px;
+      margin-top: 3px;
+      position: relative;
+    }
+    #adDiv-Close-button{
+      float: right;
+      right: 10px;
+      color: #FF0303;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      font-size: 9px;
+      font-weight: bold;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      top: 3px;
+    }
+    #adDivinfo{
+      width: 86%;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version{
+      margin-left: 225px;
+      width: 48%;
+      font-size: 10px;
+      bottom: 3px;
+    }
+    .app-version-text{
+      width: 23%;
+      margin: 0 auto 0;
+      color: #2ecc71;
+      font-size: 8px;
+    }
+  }
+
+  /* ############################## START 600 PX ################################# */
+  @media(max-width: 600px){
+    .homePage-logo-wrapper{
+      margin: 175px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 58%;
+      height: 150px;
+    }
+    .player-logo-size{
+      width: 60%;
+      height: 63px;
+    }
+    .player-info-wrapper {
+      width: 93%;
+      margin: 115px 0 35px 10px;
+    }
+
+    /* #### START AD BANNER #### */
+
+    #adDiv-wrapper{
+      width: 90%;
+      margin: 1px auto 1px;
+      top: 100px;
+    }
+    #adDivinfo {
+      width: 93%;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version-text {
+      width: 42%;
+      font-size: 8px;
+    }
+
+  }
+
+  /* ############################## START 568 PX ################################# */
+  @media(max-width: 568px){
+    .homePage-logo-wrapper{
+      margin: 175px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 60%;
+      height: 150px;
+    }
+    .player-logo-size{
+      width: 60%;
+      height: 60px;
+    }
+
+    .player-info-wrapper {
+      width: 93%;
+      margin: 115px 0 35px 10px;
+    }
+
+    /* #### START AD BANNER #### */
+
+    #adDiv-wrapper{
+      width: 90%;
+      margin: 1px auto 1px;
+      top: 100px;
+    }
+    #adDivinfo {
+      width: 93%;
+      min-height: 220px;
+      margin: 0px auto 0;
+      border: 2px solid #F00;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version-text {
+      width: 42%;
+      margin: 0 auto 0;
+      color: #2ECC71;
+      font-size: 8px;
+    }
+
+  }
+
+  /* ############################## START 480 PX ################################# */
+  @media(max-width: 480px){
+    .homePage-logo-wrapper{
+      margin: 65px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 81%;
+      height: 150px;
+    }
+    .player-logo-size{
+      width: 65%;
+      height: 57px;
+    }
+
+    /* #### START ARTIST INFO #### */
+    .player-info-wrapper{
+      width: 93%;
+      margin: 115px 0 35px 10px;
+    }
+
+    /* #### START AD BANNER #### */
+
+    #adDiv-wrapper{
+      width: 67%;
+      margin: 1px 0 0 60px;
+      top: 100px;
+    }
+    #adDivinfo {
+      width: 93%;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version-text {
+      width: 42%;
+      font-size: 8px;
+    }
+
+  }
+
+  /* ############################## START 414 PX ################################# */
+  @media(max-width: 414px){
+    .nav-link-wrapper {
+      width: 35%;
+    }
+    .already-member-wrapper {
+      right: 43px;
+    }
+    .member-login {
+      right: 4px;
+      top: 0px;
+    }
+    .homePage-logo-wrapper{
+      margin: 175px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 83%;
+      height: 150px;
+    }
+    .player-logo-size {
+      width: 62%;
+      height: 60px;
+    }
+    .page-title-h2-wrapper{
+      width: 20%;
+      margin: 0 auto 0;
+    }
+
+    /* #### START AD BANNER #### */
+
+    #adDiv-wrapper{
+      width: 77%;
+      margin: 1px 0 0 55px;
+      top: 125px;
+    }
+    #adDivinfo {
+      width: 93%;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+
+    /* #### START NAVIGATION  #### */
+    .nav-mobile-button{
+      width: 40px;
+      height: 40px;
+      background-image:url('../img/mobile_menu_button_no_bkground.png');
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+      display: block;
+      margin: 5px 0 0 25px;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version-text {
+      width: 42%;
+      font-size: 8px;
+    }
+
+  }
+
+  /* ############################## START 400 PX ################################# */
+  @media(max-width: 400px){
+    .appWrapper{
+      width: 100%;
+      height: 0px;
+      border: none;
+    }
+    .homePage-logo-wrapper{
+      margin: 175px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 85%;
+      height: 150px;
+    }
+
+    /* #### START AD BANNER #### */
+
+    #adDiv-wrapper{
+      width: 90%;
+      margin: 1px auto 1px;
+      top: 100px;
+    }
+    #adDivinfo {
+      width: 93%;
+      min-height: 220px;
+      margin: 0px auto 0;
+      border: 2px solid #F00;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+
+    /* #### START APP VERSION  #### */
+    .app-version-text {
+      width: 42%;
+      font-size: 8px;
+    }
+
+  }
+  /* ############################## START 375 PX ################################# */
+  @media(max-width: 375px){
+    .appWrapper{
+      width: 100%;
+      height: 0px;
+      border: none;
+    }
+    .homePage-logo-wrapper{
+      margin: 95px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 96%;
+      height: 150px;
+    }
+    /* #### START AD BANNER #### */
+
+    #adDiv-wrapper{
+      width: 90%;
+      margin: 1px 0 0 18px;
+      top: 100px;
+    }
+    #adDivinfo {
+      width: 93%;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+    .player-info-wrapper {
+      width: 93%;
+      margin: 115px 0 35px 10px;
+    }
+
+
+    /* #### START APP VERSION  #### */
+    .app-version-text {
+      width: 42%;
+      font-size: 8px;
+    }
+
+  }
+
+
+  /* ############################## START 360 PX ################################# */
+  @media(max-width: 360px){
+    .appWrapper{
+      width: 100%;
+      height: 0px;
+      border: none;
+    }
+    #appHeader-logo {
+      width: 35%;
+      height: 70px;
+    }
+    .homePage-logo-wrapper{
+      margin: 175px auto 30px;
+    }
+    .homePage-logo-size{
+      width: 96%;
+      height: 150px;
+    }
+    .player-logo-size {
+      width: 60%;
+      height: 55px;
+    }
+    .inner-app-logo{
+      width: 70%;
+      margin: 0px auto 0;
+      text-align: center;
+    }
+    .logo{
+      width: 100%;
+      margin: 175px auto 0;
+      text-align: center;
+    }
+    .homePage-button{
+      width: 17%;
+      margin: 50px auto 0;
+    }
+    .player-app-logo-wrapper{
+      width: 60%;
+      margin: 10px auto 0;
+    }
+
+    .nav-link-wrapper {
+      width: 40%;
+    }
+
+
+    /* #### START ARTIST INFO #### */
+    .player-info-wrapper{
+      width: 93%;
+      margin: 115px 0 35px 10px;
+      position: absolute;
+      z-index: 0;
+    }
+    .artist-pic-wrapper{
+      width: 100%;
+      min-height: 150px;
+      margin: 0 auto 0;
+      float: none;
+      text-align: center;
+    }
+    .artist-pic-size {
+      width: 70%;
+      height: 200px;
+      margin: 0 auto 0;
+    }
+    .artist-info-wrapper{
+      width: 80%;
+      min-height: 150px;
+      margin: 25px 0px 0px 35px;
+      float: none;
+    }
+    .artist-info-text-outer{
+      font-size: 11px;
+    }
+    .artist-info-text-inner{
+      color: #008000;
+    }
+    /* #### START NOW PLAYING  #### */
+    .nowPlaying-wrapper{
+      margin-top: 30px;
+    }
+    .nowPlaying-text-wrapper{
+      width: 80%;
+      text-align: center;
+      margin: 0 auto 0;
+    }
+    .nowPlaying-inner-text{
+      font-size: 14px;
+    }
+    .nowPlaying-outer-text{
+      font-size: 14px;
+    }
+    /* #### START CONTROLLER #### */
+    .controlWrapper{
+      margin: 10px auto 0px;
+      border-radius: 10px;
+      border: 1px solid #545454;
+      width: 75%;
+      padding: 5px;
+    }
+    .controller-wrapper{
+      width: 85%;
+      margin: 0 auto 0;
+    }
+    div#timebox{
+      display: block;
+      float: right;
+      width: 100px;
+      margin: 24px 10px 0px 175px;
+      position: absolute;
+      background: #000;
+      text-align: center;
+      color: #008000;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 11px;
+    }
+    /* #### START MAIN CONTENT #### */
+    .main-contentWrapper{
+      width: 100%;
+      padding: 5px;
+    }
+    .page-title-h2-wrapper{
+      width: 40%;
+      margin: 0 auto 0;
+    }
+    h2{
+      margin: 0;
+    }
+    .already-member-text{
+
+    }
+    /* #### START FORM PROPERTIES #### */
+    .formWrapper{
+      width: 70%;
+      margin: 100px auto 0;
+    }
+    .app-fields-outer{
+      height: 43px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+    .app-input-fields{
+      border-radius: 5px;
+      height: 30px;
+    }
+    .login-form-button{
+      width: 30%;
+      margin: 0 auto 0;
+    }
+    /* #### START APP VERSION  #### */
+
+    .app-version-text{
+      width: 45%;
+      font-size: 8px;
+    }
+    /* #### START AD BANNER #### */
+    #adDiv-wrapper{
+      width: 95%;
+      margin: 1px 0 0 10px;
+      top: 100px;
+    }
+
+    #adDivinfo {
+      width: 93%;
+      min-height: 220px;
+      margin: 0px auto 0;
+      border: 2px solid #F00;
+    }
+    .app-version-wrapper{
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+    .adDiv-support-text{
+      top: 8px;
+      position: relative;
+      left: 7px;
+    }
+  }
+
+  /* ############################### START 320 PX #################################### */
+  @media(max-width: 320px){
+    .appWrapper{
+      width: 100%;
+      height: 0px;
+      border: none;
+    }
+    .appHeader-logo{
+      width: 60%;
+      margin: 10px auto 0;
+    }
+
+    .homePage-logo-wrapper{
+      margin: 120px auto 30px;
+    }
+
+    .homePage-button{
+      width: 20%;
+    }
+
+    .clear-bottom{
+      clear: both;
+    }
+
+    /* #### START ARTIST INFO #### */
+    .player-info-wrapper{
+      width: 93%;
+      margin: 115px 0 35px 10px;
+    }
+    .artist-pic-wrapper{
+      width: 100%;
+      min-height: 150px;
+      margin: 0 auto 0;
+      float: none;
+    }
+    .artist-info-wrapper{
+      width: 80%;
+      min-height: 150px;
+      margin: 25px 0px 0px 35px;
+      float: none;
+    }
+    /* #### START NOW PLAYING  #### */
+    .nowPlaying-wrapper{
+      margin: 5px auto 5px;
+    }
+    .nowPlaying-text-wrapper{
+      width: 83%;
+      text-align: center;
+      margin: 0 auto 0;
+    }
+    /* #### START CONTROLLER #### */
+    .controller-wrapper{
+      width: 96%;
+      margin: 0 auto 0;
+    }
+
+    .page-title-h2-wrapper{
+      width: 30%;
+    }
+
+
+    /* #### START APP VERSION  #### */
+    .app-version-text{
+      width: 47%;
+      font-size: 8px;
+    }
+
+    /* #### START AD BANNER #### */
+    #cbc .cbc{
+      display: none;
+    }
+    #abgc .abgc{
+      display: none;
+    }
+    #adDiv{
+      position: relative;
+      z-index: 200;
+    }
+    #adDiv-wrapper{
+      top: 125px;
+    }
+    .adDiv-header{
+      width: 100%;
+      height: 25px;
+      margin: 0 auto 0;
+      background-color: #0c0c0c;
+      border-radius: 7px;
+    }
+    .adDiv-support-text{
+      top: 7px;
+      position: relative;
+      left: 5px;
+    }
+    #adDiv-Close-button{
+      float: right;
+      right: 10px;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      font-size: 9px;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      position: relative;
+      top: 3px;
+    }
+    /* #### START FORM PROPERTIES #### */
+    .formWrapper{
+      width: 76%;
+      margin: 0 auto 0;
+    }
+
+  }
+
 }

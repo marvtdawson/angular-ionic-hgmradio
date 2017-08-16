@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from "@angular/http";
-import { Storage } from '@ionic/storage';
 import { IonicStorageModule } from '@ionic/storage';
-//import { SecureStorage, SecureStorageObject} from "@ionic-native/secure-storage";
+import { SecureStorage } from "@ionic-native/secure-storage";
 import { Media } from "@ionic-native/media";
 import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
+import {Network} from "@ionic-native/network";
 
 import { SiteDataProvider } from "../providers/site-data/site-data";
 
@@ -31,6 +31,7 @@ import { BlogPage } from "../pages/blog/blog";
 import { AuthProvider } from '../providers/auth/auth';
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio"
+
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { RadioPage } from "../pages/radio/radio"
     AuthProvider,
     SiteDataProvider,
     Media,
-    Storage
+    SecureStorage,
+    Network
   ]
 })
 export class AppModule {}

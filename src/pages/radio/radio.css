@@ -1,4 +1,1029 @@
-page-radio audio::-internal-media-controls-download-button {
-  display: none; }
+page-radio {
+  /*
+  * Licensed to the Apache Software Foundation (ASF) under one
+  * or more contributor license agreements.  See the NOTICE file
+  * distributed with this work for additional information
+  * regarding copyright ownership.  The ASF licenses this file
+  * to you under the Apache License, Version 2.0 (the
+  * "License"); you may not use this file except in compliance
+  * with the License.  You may obtain a copy of the License at
+  *
+  * http://www.apache.org/licenses/LICENSE-2.0
+  *
+  * Unless required by applicable law or agreed to in writing,
+  * software distributed under the License is distributed on an
+  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  * KIND, either express or implied.  See the License for the
+  * specific language governing permissions and limitations
+  * under the License.
+  */
+  /* ############################# START 1366 PX ############################### */
+  /* ############################## START 768 PX ################################# */
+  /* ############################# START 737 PX x 767 PX ############################### */
+  /* ############################# START 736 PX ############################### */
+  /* ############################# START 638PX x 735 PX ############################### */
+  /* ############################# START 640 PX ############################### */
+  /* ############################## START 600 PX ################################# */
+  /* ############################## START 568 PX ################################# */
+  /* ############################## START 480 PX ################################# */
+  /* ############################## START 414 PX ################################# */
+  /* ############################## START 400 PX ################################# */
+  /* ############################## START 375 PX ################################# */
+  /* ############################## START 360 PX ################################# */
+  /* ############################### START 320 PX #################################### */ }
+  page-radio * {
+    -webkit-tap-highlight-color: transparent;
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */ }
+  page-radio body {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: #000;
+    /*  background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+     background-image:-webkit-gradient(
+         linear,
+         left top,
+         left bottom,
+         color-stop(0, #A7A7A7),
+         color-stop(0.51, #E4E4E4)
+     ); */
+    background-attachment: fixed;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-transform: uppercase;
+    width: 100%; }
+  page-radio .connection-error {
+    color: red;
+    font-size: 9px;
+    font-family: Arial; }
+  @media (max-width: 1366px) {
+    page-radio {
+      /* body{
+            background-color: #000;
+        } */
+      /* #### START PLAYER #### */
+      /* #### START NOW PLAYING  #### */
+      /* #### START PLAYER BUTTONS  #### */
+      /* #### START REGISTER FORM #### */
+      /* #### START APP VERSION  #### */
+      /* #### START AD BANNER #### */ }
+      page-radio .appWrapper {
+        width: 100%;
+        height: 100%;
+        background-color: #000; }
+      page-radio .headerWrapper {
+        width: 100%;
+        position: relative;
+        z-index: 1000; }
+      page-radio .homePage-logo-wrapper {
+        width: 100%;
+        margin: 75px auto 0;
+        text-align: center; }
+      page-radio .homePage-logo-size {
+        width: 300px;
+        height: 150px; }
+      page-radio .player-logo-size {
+        width: 45%;
+        height: 75px;
+        margin: 0 auto 0; }
+      page-radio #appHeader-logo {
+        width: 60%;
+        margin: 0 auto 0;
+        text-align: center; }
+      page-radio .player-info-wrapper {
+        width: 100%;
+        min-height: 100px;
+        float: left;
+        margin-top: 0px;
+        margin-bottom: 35px; }
+      page-radio .artist-pic-wrapper {
+        width: 20%;
+        min-height: 125px;
+        margin: 0px 0px 0px 100px;
+        float: left;
+        text-align: center; }
+      page-radio .artist-pic-size {
+        width: 100%;
+        height: 130px;
+        margin: 0 auto 0; }
+      page-radio .artist-info-wrapper {
+        width: 36%;
+        height: 250px;
+        border: 1px groove #008000;
+        background-color: #0c0c0c;
+        border-radius: 5px;
+        margin: 50px 89px 0px 70px;
+        float: left; }
+      page-radio .artist-info-text-outer {
+        color: white;
+        padding: 10px;
+        font-size: 20px; }
+      page-radio .nowPlaying-wrapper {
+        width: 100%;
+        margin: 0 auto 20px;
+        padding: 3px;
+        clear: both; }
+      page-radio .nowPlaying-text-wrapper {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto 0; }
+      page-radio .nowPlaying-inner-text {
+        color: #FFF;
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 16px; }
+      page-radio .nowPlaying-outer-text {
+        color: #008000;
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 16px;
+        clear: both; }
+      page-radio button {
+        border: none;
+        cursor: pointer;
+        outline: none; }
+      page-radio button#playpausebtn {
+        background: url("../assets/img/player/pause_button.png") no-repeat;
+        width: 12px;
+        height: 14px;
+        margin: 22px 10px 0px 0px;
+        float: left; }
+      page-radio button#mutebtn {
+        background: url("../../assets/img/player/unmute_button.png") no-repeat;
+        width: 5px;
+        height: 14px;
+        margin: 22px 10px 0px 0px;
+        float: left; }
+      page-radio div#timebox {
+        display: block;
+        float: left;
+        width: 100px;
+        margin: 20px 10px 0px 0px;
+        background: #000;
+        text-align: center;
+        color: #008000;
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 11px; }
+      page-radio .seekslider-wrapper {
+        width: 180px;
+        display: block;
+        float: left;
+        margin: 20px 10px 0px 0px;
+        color: white; }
+      page-radio .volumslider-wrapper {
+        width: 180px;
+        display: block;
+        float: left;
+        margin: 20px 10px 0px 0px; }
+      page-radio input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border-radius: 4px;
+        height: 20px;
+        width: 20px;
+        margin-top: 0px;
+        cursor: pointer;
+        border-radius: 1px solid grey;
+        box-shadow: 1px 1px 1px #000000; }
+      page-radio input[type=range]::-moz-range-thumb {
+        border-radius: 4px;
+        height: 20px;
+        width: 10px;
+        cursor: pointer; }
+      page-radio .formWrapper {
+        width: 65%;
+        margin: 0px auto 0px;
+        text-align: right;
+        background-color: #171616;
+        padding: 20px;
+        border-radius: 7px; }
+      page-radio .already-member-wrapper {
+        float: right;
+        right: 43px;
+        width: 182px;
+        border: 1px solid blue;
+        position: relative;
+        top: -16px; }
+      page-radio .already-member-text {
+        font-size: 12px;
+        font-family: Arial;
+        color: #363606; }
+      page-radio .member-login {
+        color: #ffffff;
+        float: right;
+        right: 20px;
+        top: -15px;
+        position: relative; }
+      page-radio .page-title-h2-wrapper {
+        width: 20%;
+        margin: 0 auto 0; }
+      page-radio h2 {
+        color: #fff;
+        margin: 0 0 0 36px; }
+      page-radio .app-fields-outer {
+        height: 35px;
+        margin-bottom: 20px; }
+      page-radio .regTandC {
+        float: left;
+        margin-left: 10px; }
+      page-radio .regTandC_text {
+        float: left;
+        margin-left: 10px;
+        margin-top: 3px;
+        color: #fff;
+        text-align: center; }
+      page-radio .app-version-wrapper {
+        width: 100%;
+        position: fixed;
+        bottom: 0; }
+      page-radio .app-version-text {
+        width: 40%;
+        margin: 0 auto 0;
+        color: #2ecc71;
+        font-size: 8px; }
+      page-radio .cbc {
+        display: none; }
+      page-radio .abgc {
+        display: none; }
+      page-radio #adDiv {
+        position: relative;
+        z-index: 200; }
+      page-radio #adDiv-wrapper {
+        width: 25.5%;
+        min-height: 250px;
+        margin: 0 auto 0;
+        position: absolute;
+        z-index: 200;
+        border: 1px solid green; }
+      page-radio .adDiv-header {
+        width: 100%;
+        height: 25px;
+        margin: 0 auto 0;
+        background-color: #0c0c0c;
+        border-radius: 7px; }
+      page-radio .adDiv-support-Wrapper {
+        width: 90%;
+        position: relative;
+        float: left;
+        height: 25px; }
+      page-radio .adDiv-support-text {
+        color: #545454;
+        font-size: 9px;
+        font-family: Arial;
+        top: 7px;
+        position: relative;
+        left: 5px; }
+      page-radio .closeAd-button-wrapper {
+        float: right;
+        right: 5px;
+        margin-top: 3px;
+        position: relative; }
+      page-radio #adDiv-Close-button {
+        float: right;
+        right: 10px;
+        color: #FF0303;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        font-size: 9px;
+        font-weight: bold;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        top: 3px; }
+      page-radio #adDivinfo {
+        width: 86%;
+        margin: 0 auto 0;
+        border: 2px solid red; } }
+  @media (max-width: 768px) {
+    page-radio {
+      /* #### START PLAYER #### */
+      /* #### START PLAYER #### */
+      /* #### START CONTROLLER #### */
+      /* #### START AD BANNER #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .headerWrapper {
+        width: 100%;
+        position: absolute;
+        z-index: 2500; }
+      page-radio .header-logoWrapper {
+        width: 100%;
+        margin: 5px auto 20px; }
+      page-radio .appWrapper {
+        width: 100%;
+        height: 0px;
+        border: none; }
+      page-radio #appHeader-logo {
+        width: 35%;
+        height: 70px;
+        margin: 0 auto 0;
+        text-align: center; }
+      page-radio .app-fields-outer {
+        height: 43px;
+        margin-bottom: 25px;
+        text-align: left; }
+      page-radio .player-logo-size {
+        width: 65%;
+        height: 70px; }
+      page-radio .homePage-logo-wrapper {
+        margin: 175px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 45%;
+        height: 150px; }
+      page-radio div#timebox {
+        display: block;
+        float: left;
+        width: 100px;
+        margin: 20px 10px 0px 0px;
+        background: #000;
+        text-align: center;
+        color: #008000;
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 11px; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 150px 0 35px 10px;
+        position: absolute;
+        z-index: 0; }
+      page-radio .artist-pic-wrapper {
+        width: 35%;
+        min-height: 125px;
+        margin: 0px 0px 0px 45px; }
+      page-radio .artist-pic-size {
+        height: 300px; }
+      page-radio .artist-info-wrapper {
+        width: 54%;
+        height: 300px;
+        margin: 0px 0px 30px 12px; }
+      page-radio .controller-wrapper {
+        width: 44%;
+        margin: 0 auto 0; }
+      page-radio #audio-controls {
+        margin: 0 auto 0; }
+      page-radio .control-wrapper {
+        width: 100%; }
+      page-radio .control-assest {
+        margin: 0 auto 0;
+        width: 70%; }
+      page-radio .seekslider-wrapper {
+        width: 275px;
+        margin: 20px 10px 0px 0px; }
+      page-radio button#playpausebtn {
+        margin: 2px 15px 0px 0px; }
+      page-radio #seekslider {
+        width: 54%;
+        float: left;
+        margin: 0px 10px 0px 0px; }
+      page-radio button#mutebtn {
+        margin: 5px 15px 0px 0px; }
+      page-radio #curtimetext {
+        width: 12%;
+        float: left;
+        margin: 2px 10px 0 0; }
+      page-radio #durtimetext {
+        float: left;
+        margin: 3px 4px 0 2px; }
+      page-radio .timebox-wrapper {
+        float: left;
+        color: white;
+        margin: 24px 0 0 15px;
+        font-size: 15px; }
+      page-radio .volumslider-wrapper {
+        width: 40%;
+        margin: 16px 10px 0px 0px; }
+      page-radio #volumeslider {
+        width: 75%; }
+      page-radio #adDiv-wrapper {
+        width: 90%;
+        display: none; }
+      page-radio #adDivinfo {
+        width: 93%;
+        min-height: 220px;
+        margin: 0px auto 0;
+        border: 2px solid #F00; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; }
+      page-radio #adDiv-Close-button {
+        float: right;
+        right: 10px;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        font-size: 9px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        position: relative;
+        top: 3px; }
+      page-radio .app-version-text {
+        width: 20%;
+        padding: 2px;
+        font-size: 8px; } }
+  @media (min-width: 737px) and (max-width: 767px) {
+    page-radio .page-title-h2-wrapper {
+      width: 20%;
+      margin: 0 auto 0; } }
+  @media (max-width: 736px) {
+    page-radio {
+      /* #### START PLAYER #### */ }
+      page-radio .page-title-h2-wrapper {
+        width: 20%;
+        margin: 0 auto 0; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px; }
+      page-radio .artist-pic-wrapper {
+        width: 35%;
+        min-height: 125px;
+        margin: 0px 0px 0px 45px; }
+      page-radio .artist-pic-size {
+        height: 300px; }
+      page-radio .artist-info-wrapper {
+        width: 54%;
+        height: 300px;
+        margin: 0px 0px 30px 12px; }
+      page-radio .control-wrapper {
+        width: 100%; }
+      page-radio .control-assest {
+        margin: 0 auto 0;
+        width: 70%; }
+      page-radio .seekslider-wrapper {
+        width: 275px;
+        margin: 20px 10px 0px 0px; }
+      page-radio button#playpausebtn {
+        margin: 2px 15px 0px 0px; }
+      page-radio #seekslider {
+        width: 54%;
+        float: left;
+        margin: 0px 10px 0px 0px; }
+      page-radio button#mutebtn {
+        margin: 5px 15px 0px 0px; }
+      page-radio #curtimetext {
+        width: 12%;
+        float: left;
+        margin: 2px 10px 0 0; }
+      page-radio #durtimetext {
+        float: left;
+        margin: 3px 4px 0 2px; }
+      page-radio .timebox-wrapper {
+        float: left;
+        color: white;
+        margin: 24px 0 0 15px;
+        font-size: 15px; }
+      page-radio .volumslider-wrapper {
+        width: 40%;
+        margin: 16px 10px 0px 0px; }
+      page-radio #volumeslider {
+        width: 75%; } }
+  @media (min-width: 641px) and (max-width: 735px) {
+    page-radio .page-title-h2-wrapper {
+      width: 20%;
+      margin: 0 auto 0; } }
+  @media (max-width: 640px) {
+    page-radio {
+      /*#### START PLAYER ####*/
+      /* #### START NOW PLAYING  #### */
+      /* #### START CONTROLLER #### */
+      /* #### START AD BANNER #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .homePage-logo-wrapper {
+        width: 100%;
+        margin: 80px auto 35px; }
+      page-radio .homePage-logo-size {
+        width: 50%;
+        height: 135px; }
+      page-radio .player-app-logo-wrapper {
+        width: 50%;
+        margin: 10px auto 0;
+        text-align: center; }
+      page-radio .player-logo-size {
+        width: 60%;
+        height: 65px; }
+      page-radio .hgmPlayer-logo-size {
+        width: 100px;
+        height: 100px;
+        margin: 10px auto 0px; }
+      page-radio .homePage-button {
+        width: 10%;
+        margin: 30px auto 0; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px; }
+      page-radio .artist-pic-wrapper {
+        width: 20%;
+        min-height: 125px;
+        margin: 0px 0px 0px 100px;
+        float: left;
+        text-align: center; }
+      page-radio .artist-pic-size {
+        width: 100%;
+        height: 130px;
+        margin: 0 auto 0; }
+      page-radio .artist-info-wrapper {
+        width: 40%;
+        min-height: 125px;
+        border-radius: 5px;
+        margin: 0px 0px 0px 65px;
+        float: left; }
+      page-radio .artist-info-text-outer {
+        color: #fff;
+        padding: 5px;
+        margin-top: 5px; }
+      page-radio .artist-info-text-inner {
+        color: #008000;
+        padding: 5px;
+        margin-top: 5px; }
+      page-radio .nowPlaying-text-wrapper {
+        width: 60%;
+        text-align: center;
+        margin: 0 auto 0; }
+      page-radio .nowPlaying-inner-text {
+        font-size: 16px; }
+      page-radio .nowPlaying-outer-text {
+        font-size: 16px; }
+      page-radio .controller-wrapper {
+        width: 85%;
+        margin: 0 auto 0; }
+      page-radio .cbc {
+        display: none; }
+      page-radio .abgc {
+        display: none; }
+      page-radio #adDiv {
+        position: relative;
+        z-index: 200; }
+      page-radio #adDiv-wrapper {
+        width: 55%;
+        min-height: 250px;
+        margin: 0 0 0 115px;
+        position: absolute;
+        z-index: 200;
+        border: 1px solid green; }
+      page-radio .adDiv-header {
+        width: 100%;
+        height: 25px;
+        margin: 0 auto 0;
+        background-color: #0c0c0c;
+        border-radius: 7px; }
+      page-radio .adDiv-support-Wrapper {
+        width: 90%;
+        position: relative;
+        float: left;
+        height: 25px; }
+      page-radio .adDiv-support-text {
+        color: #545454;
+        font-size: 9px;
+        font-family: Arial;
+        top: 7px;
+        position: relative;
+        left: 5px; }
+      page-radio .closeAd-button-wrapper {
+        float: right;
+        right: 5px;
+        margin-top: 3px;
+        position: relative; }
+      page-radio #adDiv-Close-button {
+        float: right;
+        right: 10px;
+        color: #FF0303;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        font-size: 9px;
+        font-weight: bold;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        top: 3px; }
+      page-radio #adDivinfo {
+        width: 86%; }
+      page-radio .app-version {
+        margin-left: 225px;
+        width: 48%;
+        font-size: 10px;
+        bottom: 3px; }
+      page-radio .app-version-text {
+        width: 23%;
+        margin: 0 auto 0;
+        color: #2ecc71;
+        font-size: 8px; } }
+  @media (max-width: 600px) {
+    page-radio {
+      /* #### START AD BANNER #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .homePage-logo-wrapper {
+        margin: 175px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 58%;
+        height: 150px; }
+      page-radio .player-logo-size {
+        width: 60%;
+        height: 63px; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px; }
+      page-radio #adDiv-wrapper {
+        width: 90%;
+        margin: 1px auto 1px;
+        top: 100px; }
+      page-radio #adDivinfo {
+        width: 93%; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; }
+      page-radio .app-version-text {
+        width: 42%;
+        font-size: 8px; } }
+  @media (max-width: 568px) {
+    page-radio {
+      /* #### START AD BANNER #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .homePage-logo-wrapper {
+        margin: 175px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 60%;
+        height: 150px; }
+      page-radio .player-logo-size {
+        width: 60%;
+        height: 60px; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px; }
+      page-radio #adDiv-wrapper {
+        width: 90%;
+        margin: 1px auto 1px;
+        top: 100px; }
+      page-radio #adDivinfo {
+        width: 93%;
+        min-height: 220px;
+        margin: 0px auto 0;
+        border: 2px solid #F00; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; }
+      page-radio .app-version-text {
+        width: 42%;
+        margin: 0 auto 0;
+        color: #2ECC71;
+        font-size: 8px; } }
+  @media (max-width: 480px) {
+    page-radio {
+      /* #### START ARTIST INFO #### */
+      /* #### START AD BANNER #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .homePage-logo-wrapper {
+        margin: 65px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 81%;
+        height: 150px; }
+      page-radio .player-logo-size {
+        width: 65%;
+        height: 57px; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px; }
+      page-radio #adDiv-wrapper {
+        width: 67%;
+        margin: 1px 0 0 60px;
+        top: 100px; }
+      page-radio #adDivinfo {
+        width: 93%; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; }
+      page-radio .app-version-text {
+        width: 42%;
+        font-size: 8px; } }
+  @media (max-width: 414px) {
+    page-radio {
+      /* #### START AD BANNER #### */
+      /* #### START NAVIGATION  #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .nav-link-wrapper {
+        width: 35%; }
+      page-radio .already-member-wrapper {
+        right: 43px; }
+      page-radio .member-login {
+        right: 4px;
+        top: 0px; }
+      page-radio .homePage-logo-wrapper {
+        margin: 175px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 83%;
+        height: 150px; }
+      page-radio .player-logo-size {
+        width: 62%;
+        height: 60px; }
+      page-radio .page-title-h2-wrapper {
+        width: 20%;
+        margin: 0 auto 0; }
+      page-radio #adDiv-wrapper {
+        width: 77%;
+        margin: 1px 0 0 55px;
+        top: 125px; }
+      page-radio #adDivinfo {
+        width: 93%; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; }
+      page-radio .nav-mobile-button {
+        width: 40px;
+        height: 40px;
+        background-image: url("../img/mobile_menu_button_no_bkground.png");
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        display: block;
+        margin: 5px 0 0 25px; }
+      page-radio .app-version-text {
+        width: 42%;
+        font-size: 8px; } }
+  @media (max-width: 400px) {
+    page-radio {
+      /* #### START AD BANNER #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .appWrapper {
+        width: 100%;
+        height: 0px;
+        border: none; }
+      page-radio .homePage-logo-wrapper {
+        margin: 175px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 85%;
+        height: 150px; }
+      page-radio #adDiv-wrapper {
+        width: 90%;
+        margin: 1px auto 1px;
+        top: 100px; }
+      page-radio #adDivinfo {
+        width: 93%;
+        min-height: 220px;
+        margin: 0px auto 0;
+        border: 2px solid #F00; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; }
+      page-radio .app-version-text {
+        width: 42%;
+        font-size: 8px; } }
+  @media (max-width: 375px) {
+    page-radio {
+      /* #### START AD BANNER #### */
+      /* #### START APP VERSION  #### */ }
+      page-radio .appWrapper {
+        width: 100%;
+        height: 0px;
+        border: none; }
+      page-radio .homePage-logo-wrapper {
+        margin: 95px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 96%;
+        height: 150px; }
+      page-radio #adDiv-wrapper {
+        width: 90%;
+        margin: 1px 0 0 18px;
+        top: 100px; }
+      page-radio #adDivinfo {
+        width: 93%; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px; }
+      page-radio .app-version-text {
+        width: 42%;
+        font-size: 8px; } }
+  @media (max-width: 360px) {
+    page-radio {
+      /* #### START ARTIST INFO #### */
+      /* #### START NOW PLAYING  #### */
+      /* #### START CONTROLLER #### */
+      /* #### START MAIN CONTENT #### */
+      /* #### START FORM PROPERTIES #### */
+      /* #### START APP VERSION  #### */
+      /* #### START AD BANNER #### */ }
+      page-radio .appWrapper {
+        width: 100%;
+        height: 0px;
+        border: none; }
+      page-radio #appHeader-logo {
+        width: 35%;
+        height: 70px; }
+      page-radio .homePage-logo-wrapper {
+        margin: 175px auto 30px; }
+      page-radio .homePage-logo-size {
+        width: 96%;
+        height: 150px; }
+      page-radio .player-logo-size {
+        width: 60%;
+        height: 55px; }
+      page-radio .inner-app-logo {
+        width: 70%;
+        margin: 0px auto 0;
+        text-align: center; }
+      page-radio .logo {
+        width: 100%;
+        margin: 175px auto 0;
+        text-align: center; }
+      page-radio .homePage-button {
+        width: 17%;
+        margin: 50px auto 0; }
+      page-radio .player-app-logo-wrapper {
+        width: 60%;
+        margin: 10px auto 0; }
+      page-radio .nav-link-wrapper {
+        width: 40%; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px;
+        position: absolute;
+        z-index: 0; }
+      page-radio .artist-pic-wrapper {
+        width: 100%;
+        min-height: 150px;
+        margin: 0 auto 0;
+        float: none;
+        text-align: center; }
+      page-radio .artist-pic-size {
+        width: 70%;
+        height: 200px;
+        margin: 0 auto 0; }
+      page-radio .artist-info-wrapper {
+        width: 80%;
+        min-height: 150px;
+        margin: 25px 0px 0px 35px;
+        float: none; }
+      page-radio .artist-info-text-outer {
+        font-size: 11px; }
+      page-radio .artist-info-text-inner {
+        color: #008000; }
+      page-radio .nowPlaying-wrapper {
+        margin-top: 30px; }
+      page-radio .nowPlaying-text-wrapper {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto 0; }
+      page-radio .nowPlaying-inner-text {
+        font-size: 14px; }
+      page-radio .nowPlaying-outer-text {
+        font-size: 14px; }
+      page-radio .controlWrapper {
+        margin: 10px auto 0px;
+        border-radius: 10px;
+        border: 1px solid #545454;
+        width: 75%;
+        padding: 5px; }
+      page-radio .controller-wrapper {
+        width: 85%;
+        margin: 0 auto 0; }
+      page-radio div#timebox {
+        display: block;
+        float: right;
+        width: 100px;
+        margin: 24px 10px 0px 175px;
+        position: absolute;
+        background: #000;
+        text-align: center;
+        color: #008000;
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 11px; }
+      page-radio .main-contentWrapper {
+        width: 100%;
+        padding: 5px; }
+      page-radio .page-title-h2-wrapper {
+        width: 40%;
+        margin: 0 auto 0; }
+      page-radio h2 {
+        margin: 0; }
+      page-radio .formWrapper {
+        width: 70%;
+        margin: 100px auto 0; }
+      page-radio .app-fields-outer {
+        height: 43px;
+        margin-bottom: 25px;
+        text-align: left; }
+      page-radio .app-input-fields {
+        border-radius: 5px;
+        height: 30px; }
+      page-radio .login-form-button {
+        width: 30%;
+        margin: 0 auto 0; }
+      page-radio .app-version-text {
+        width: 45%;
+        font-size: 8px; }
+      page-radio #adDiv-wrapper {
+        width: 95%;
+        margin: 1px 0 0 10px;
+        top: 100px; }
+      page-radio #adDivinfo {
+        width: 93%;
+        min-height: 220px;
+        margin: 0px auto 0;
+        border: 2px solid #F00; }
+      page-radio .app-version-wrapper {
+        width: 100%;
+        position: fixed;
+        bottom: 0; }
+      page-radio .adDiv-support-text {
+        top: 8px;
+        position: relative;
+        left: 7px; } }
+  @media (max-width: 320px) {
+    page-radio {
+      /* #### START ARTIST INFO #### */
+      /* #### START NOW PLAYING  #### */
+      /* #### START CONTROLLER #### */
+      /* #### START APP VERSION  #### */
+      /* #### START AD BANNER #### */
+      /* #### START FORM PROPERTIES #### */ }
+      page-radio .appWrapper {
+        width: 100%;
+        height: 0px;
+        border: none; }
+      page-radio .appHeader-logo {
+        width: 60%;
+        margin: 10px auto 0; }
+      page-radio .homePage-logo-wrapper {
+        margin: 120px auto 30px; }
+      page-radio .homePage-button {
+        width: 20%; }
+      page-radio .clear-bottom {
+        clear: both; }
+      page-radio .player-info-wrapper {
+        width: 93%;
+        margin: 115px 0 35px 10px; }
+      page-radio .artist-pic-wrapper {
+        width: 100%;
+        min-height: 150px;
+        margin: 0 auto 0;
+        float: none; }
+      page-radio .artist-info-wrapper {
+        width: 80%;
+        min-height: 150px;
+        margin: 25px 0px 0px 35px;
+        float: none; }
+      page-radio .nowPlaying-wrapper {
+        margin: 5px auto 5px; }
+      page-radio .nowPlaying-text-wrapper {
+        width: 83%;
+        text-align: center;
+        margin: 0 auto 0; }
+      page-radio .controller-wrapper {
+        width: 96%;
+        margin: 0 auto 0; }
+      page-radio .page-title-h2-wrapper {
+        width: 30%; }
+      page-radio .app-version-text {
+        width: 47%;
+        font-size: 8px; }
+      page-radio #cbc .cbc {
+        display: none; }
+      page-radio #abgc .abgc {
+        display: none; }
+      page-radio #adDiv {
+        position: relative;
+        z-index: 200; }
+      page-radio #adDiv-wrapper {
+        top: 125px; }
+      page-radio .adDiv-header {
+        width: 100%;
+        height: 25px;
+        margin: 0 auto 0;
+        background-color: #0c0c0c;
+        border-radius: 7px; }
+      page-radio .adDiv-support-text {
+        top: 7px;
+        position: relative;
+        left: 5px; }
+      page-radio #adDiv-Close-button {
+        float: right;
+        right: 10px;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        font-size: 9px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        position: relative;
+        top: 3px; }
+      page-radio .formWrapper {
+        width: 76%;
+        margin: 0 auto 0; } }
 
 /*# sourceMappingURL=radio.css.map */
