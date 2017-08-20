@@ -7,6 +7,7 @@ import { SecureStorage } from "@ionic-native/secure-storage";
 import { Media } from "@ionic-native/media";
 import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
 import {Network} from "@ionic-native/network";
+import {FormsModule} from "@angular/forms";
 
 import { SiteDataProvider } from "../providers/site-data/site-data";
 
@@ -31,7 +32,6 @@ import { BlogPage } from "../pages/blog/blog";
 import { AuthProvider } from '../providers/auth/auth';
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio"
-
 
 
 @NgModule({
@@ -60,7 +60,8 @@ import { RadioPage } from "../pages/radio/radio"
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

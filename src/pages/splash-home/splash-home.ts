@@ -15,11 +15,27 @@ declare var Connection: any;
 
 export class SplashHomePage {
 
+  loader: any;
+
   constructor(public siteData: SiteDataProvider,
               public network: Network,
               private navCtrl: NavController,
               public plt: Platform,
-              private alertCtrl: AlertController) {}
+              private alertCtrl: AlertController) {
+
+    // show connection alert message
+    this.plt.ready().then((readySource) => {
+
+      console.log('Platform ready from', readySource);
+
+      let alert = this.alertCtrl.create({
+         title: "Connected",
+         subTitle: <string> this.network.type,
+         buttons: ["OK"]
+       });
+       alert.present();
+    });
+  }
 
   // static site data
   siteName = this.siteData.siteName;
@@ -27,19 +43,7 @@ export class SplashHomePage {
 
   ionViewDidLoad(){
 
-    function checkConnection() {
 
-      this.plt.ready().then(() => {
-        let alert = this.alertCtrl.create({
-          title: "Connection Status",
-          subTitle: <string> this.network.connection,
-          buttons: ["OK"]
-        });
-        this.navCtrl.present(alert);
-      });
-    }
-
-    checkConnection();
   }
 
 }

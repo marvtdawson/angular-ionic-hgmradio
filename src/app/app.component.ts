@@ -12,13 +12,15 @@ import { ContactUsPage } from "../pages/contact-us/contact-us";
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
+import { RadioPage } from '../pages/radio/radio';
 import { AuthProvider } from "../providers/auth/auth";
-import {RadioPage} from "../pages/radio/radio";
+
 
 
 @Component({
   templateUrl: 'app.html'
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
@@ -55,16 +57,21 @@ export class MyApp {
     this.auth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
-        this.rootPage = SplashHomePage;
+        this.rootPage = RadioPage;
       } else {
-        this.rootPage = SplashHomePage;
+        this.rootPage = LoginPage;
       }
       this.loader.dismiss();
     });
   }
 
+  //add a onload event to app that triggers
+  // 1. network connection
+  // 2. authentication of user
+
+
   /**
-   * show gif
+   * show Authenticating loader
    */
   presentLoading() {
     this.loader = this.loadingCtrl.create({
@@ -73,6 +80,7 @@ export class MyApp {
     this.loader.present();
   }
 
+  // if not a register member, show not a register member loader
   notARegisterMember() {
     this.loader = this.loadingCtrl.create({
       content: "Please Register"
@@ -80,7 +88,8 @@ export class MyApp {
   }
 
   initializeApp() {
-    this.platform.ready().then(() => {
+    this.platform.ready().then((readySource) => {
+      console.log('Platform ready from inside InitialApp function', readySource);
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
