@@ -12,7 +12,6 @@ import { ContactUsPage } from "../pages/contact-us/contact-us";
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
-import { RadioPage } from '../pages/radio/radio';
 import { AuthProvider } from "../providers/auth/auth";
 
 
@@ -57,9 +56,9 @@ export class MyApp {
     this.auth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
-        this.rootPage = RadioPage;
+        this.rootPage = SplashHomePage;
       } else {
-        this.rootPage = LoginPage;
+        this.rootPage = SplashHomePage;
       }
       this.loader.dismiss();
     });

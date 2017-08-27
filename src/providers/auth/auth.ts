@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { IonicStorageModule } from '@ionic/storage';
-import { Storage } from '@ionic/storage';
+import { Storage, IonicStorageModule } from '@ionic/storage';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 @Injectable()
 export class AuthProvider {
 
   constructor(public http: HttpModule,
               public secureStorage: IonicStorageModule,
-              public storage: Storage){
+              public storage: Storage,
+              private sqlite: SQLite,
+              private sqliteobj: SQLiteObject){
   }
+
 
   setData(){
     console.log('Set Data');
