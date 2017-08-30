@@ -8,9 +8,11 @@ import { Media } from "@ionic-native/media";
 import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
 import { Network } from "@ionic-native/network";
 import { FormsModule } from "@angular/forms";
-import { SQLite, SQLiteObject } from "@ionic-native/sqlite";
+import { SQLite } from "@ionic-native/sqlite";
 
 import { SiteDataProvider } from "../providers/site-data/site-data";
+import { UserAuthProvider } from '../providers/user-auth/user-auth';
+import { RedditDataProvider } from "../providers/reddit-data/reddit-data";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -32,8 +34,8 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { AuthProvider } from '../providers/auth/auth';
 import { SplashHomePage } from "../pages/splash-home/splash-home";
-import { RadioPage } from "../pages/radio/radio"
-import { UserAuthProvider } from '../providers/user-auth/user-auth';
+import { RadioPage } from "../pages/radio/radio";
+
 
 
 @NgModule({
@@ -97,7 +99,7 @@ import { UserAuthProvider } from '../providers/user-auth/user-auth';
     Network,
     UserAuthProvider,
     SQLite,
-    SQLiteObject
+    RedditDataProvider
   ]
 })
 export class AppModule {}

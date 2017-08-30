@@ -2,7 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, AlertController, Platform } from 'ionic-angular';
 //import { Storage } from '@ionic/storage';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
-import {Network} from "@ionic-native/network";
+import { Network } from "@ionic-native/network";
+import { Http, Headers } from "@angular/http";
+import { RedditDataProvider } from "../../providers/reddit-data/reddit-data";
+
 
 declare var navigator: any;
 declare var Connection: any;
@@ -21,7 +24,9 @@ export class SplashHomePage {
               public network: Network,
               private navCtrl: NavController,
               public plt: Platform,
-              private alertCtrl: AlertController) {
+              private alertCtrl: AlertController,
+              public http: Http,
+              public redditService: RedditDataProvider) {
 
     // show connection alert message
     this.plt.ready().then((readySource) => {
@@ -42,8 +47,7 @@ export class SplashHomePage {
   appVersion = this.siteData.appVersion;
 
   ionViewDidLoad(){
-
-
+    this.redditService.getLocalData();
   }
 
 }
