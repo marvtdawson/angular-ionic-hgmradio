@@ -25,7 +25,7 @@ export class SplashHomePage {
               public http: Http,
               public redditService: RedditDataProvider) {
 
-    // show connection alert message
+    // show connection alert message regarding current platform
     this.plt.ready().then((readySource) => {
 
       console.log('Platform ready from', readySource);

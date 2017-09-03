@@ -24,3 +24,13 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+
+### Tabs Module
+
+On the following d.ts files, certain information has been commented out to 
+disregard the error messages, temporarily:
+
+In file "node_modules/ionic-angular/navigation/nav-controller-base.d.ts" on line 20 /*implements NavController*/ has been commented out.
+Example: export declare class NavControllerBase extends Ion implements NavController.
+
+
