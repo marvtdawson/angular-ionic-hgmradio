@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.homegrownmusiq.hgmradio" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HGM Radio</name>
-    <description>Home Grown Musiq Radio.</description>
+    <description>Home Grown Musiq Radio</description>
     <author email="marvintdawson@gmail.com" href="http://www.homegrownmusiq.com/">Home Grown Musiq Design Team</author>
     <content src="index.html" />
     <access origin="*" />

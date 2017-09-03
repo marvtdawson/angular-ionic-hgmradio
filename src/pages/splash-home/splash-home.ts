@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController, Platform } from 'ionic-angular';
+import { IonicPage, AlertController, Platform } from 'ionic-angular';
 //import { Storage } from '@ionic/storage';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Network } from "@ionic-native/network";
-import { Http, Headers } from "@angular/http";
+import { Http } from "@angular/http";
 import { RedditDataProvider } from "../../providers/reddit-data/reddit-data";
 
 
-declare var navigator: any;
-declare var Connection: any;
+//declare var navigator: any;
+//declare var Connection: any;
 
 @IonicPage()
 @Component({
@@ -18,11 +18,8 @@ declare var Connection: any;
 
 export class SplashHomePage {
 
-  loader: any;
-
   constructor(public siteData: SiteDataProvider,
               public network: Network,
-              private navCtrl: NavController,
               public plt: Platform,
               private alertCtrl: AlertController,
               public http: Http,
