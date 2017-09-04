@@ -7,9 +7,6 @@ import { Http } from "@angular/http";
 import { RedditDataProvider } from "../../providers/reddit-data/reddit-data";
 
 
-//declare var navigator: any;
-//declare var Connection: any;
-
 @IonicPage()
 @Component({
   selector: 'page-splash-home',
@@ -17,6 +14,10 @@ import { RedditDataProvider } from "../../providers/reddit-data/reddit-data";
 })
 
 export class SplashHomePage {
+
+  // static site data
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
 
   constructor(public siteData: SiteDataProvider,
               public network: Network,
@@ -38,10 +39,6 @@ export class SplashHomePage {
        alert.present();
     });
   }
-
-  // static site data
-  siteName = this.siteData.siteName;
-  appVersion = this.siteData.appVersion;
 
   ionViewDidLoad(){
     this.redditService.getLocalData();
