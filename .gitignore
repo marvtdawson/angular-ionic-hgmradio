@@ -30,6 +30,10 @@ www/
 test/
 $RECYCLE.BIN/
 google-services.json
+ionic-unit-testing-example
+hgmRadio.apk
+hgmRadio.jks
+HgmRadio.apk
 
 .DS_Store
 Thumbs.db

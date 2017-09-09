@@ -35,6 +35,7 @@ import { BlogPage } from "../pages/blog/blog";
 import { AuthProvider } from '../providers/auth/auth';
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
+import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
 
 
 
@@ -99,7 +100,8 @@ import { RadioPage } from "../pages/radio/radio";
     Network,
     UserAuthProvider,
     SQLite,
-    RedditDataProvider
+    RedditDataProvider,
+    NetworkAuthProvider
   ]
 })
 export class AppModule {}
