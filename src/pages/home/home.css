@@ -1,0 +1,17 @@
+page-home video {
+  width: 100%; }
+page-home .jumbotron-wrapper {
+  width: 100%;
+  background-color: #000; }
+page-home .homeSlide {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto 0; }
+page-home .homeSlide_imgs {
+  width: 100%;
+  height: 200px; }
+page-home .swiper-container {
+  width: 100%;
+  height: 300px; }
+
+/*# sourceMappingURL=home.css.map */

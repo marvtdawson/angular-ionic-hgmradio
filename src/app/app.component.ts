@@ -2,9 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, ModalController, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SiteDataProvider } from "../providers/site-data/site-data";
 //import { Storage } from '@ionic/storage';
-
 
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from "../pages/about/about";
@@ -12,8 +10,10 @@ import { ContactUsPage } from "../pages/contact-us/contact-us";
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
-import {NetworkAuthProvider} from "../providers/network-auth/network-auth";
 
+import { SiteDataProvider } from "../providers/site-data/site-data";
+import { NetworkAuthProvider } from "../providers/network-auth/network-auth";
+import { UserAuthProvider } from "../providers/user-auth/user-auth";
 
 
 @Component({
@@ -37,7 +37,8 @@ export class MyApp {
               public modalCtrl: ModalController,
               public loadingCtrl: LoadingController,
               public siteData: SiteDataProvider,
-              public networkAuth: NetworkAuthProvider
+              public networkAuth: NetworkAuthProvider,
+              public userAuth: UserAuthProvider
               /*public secureStorage: Storage*/) {
 
     this.initializeApp();
@@ -46,27 +47,32 @@ export class MyApp {
     this.pages = [
       {title: 'Home', component: HomePage},
       {title: 'About', component: AboutPage},
-      {title: 'Sign Up', component: RegisterPage},
-      {title: 'Member Login', component: LoginPage},
-      {title: 'Contact Us', component: ContactUsPage}
+      {title: 'Register', component: RegisterPage},
+      {title: 'Login', component: LoginPage},
+      {title: 'Contact', component: ContactUsPage}
     ];
 
     this.presentLoading();
+
+    // 1. network connection
+    this.networkAuth.networkConnection();
 
     this.networkAuth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;
       } else {
-        this.rootPage = SplashHomePage;
+
+        this.rootPage = LoginPage;
       }
       this.loader.dismiss();
     });
+
+    // 2. authentication of user
+    this.userAuth.userInfo();
+
   }
 
-  //add a onload event to app that triggers
-  // 1. network connection
-  // 2. authentication of user
 
 
   /**

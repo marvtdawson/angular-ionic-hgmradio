@@ -11,7 +11,7 @@ import {SiteDataProvider} from "../../providers/site-data/site-data";
 
 export class LoginPage{
   constructor(public siteData: SiteDataProvider){}
-  pageTitle: string = 'Member Login';
+  pageTitle: string = 'Login';
   siteName = this.siteData.siteName;
   appVersion = this.siteData.appVersion;
   pushForgotPasswordPage = ForgotPasswordPage;

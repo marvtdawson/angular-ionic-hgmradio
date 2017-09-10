@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { Storage, IonicStorageModule } from '@ionic/storage';
+import { Storage } from '@ionic/storage';
+import { LoadingController } from 'ionic-angular';
 
 
 /**
@@ -13,7 +14,9 @@ import { Storage, IonicStorageModule } from '@ionic/storage';
 export class UserAuthProvider {
 
   constructor(public http: Http,
-              public storage: Storage) {
+              public storage: Storage,
+              public loadingCtrl: LoadingController,) {
+
     console.log('Hello UserAuthProvider Provider');
 
     storage.set('email', 'adog@hgmradio.com');
@@ -27,10 +30,16 @@ export class UserAuthProvider {
   // with selected persistent data module/application for authentication.
   // Currently CouchDB is the default module being used to store persistent data.
 
-  /*let _id: any;
-  let uName: string;
-  let uEmail: string;
-  let specPw: any;*/
+  userInfo() {
+
+    let _id: any;
+    let uName: string;
+    let uEmail: string;
+    let specPw: any;
+
+
+
+  }
 
 
 

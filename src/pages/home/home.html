@@ -1,56 +1,23 @@
-<!--ion-header>
+<ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{ siteName }}</ion-title>
   </ion-navbar>
-</ion-header-->
+</ion-header>
 
 <!-- display page content -->
 <ion-content padding>
-  <!-- Slider main container -->
-  <div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide"><img src="../../assets/img/cedar_view.png" class="homeSlide_imgs" ></div>
-      <div class="swiper-slide"><img src="../../assets/img/Hip-Hop-News-1024x386.jpg" class="homeSlide_imgs" ></div>
-      <div class="swiper-slide"><img src="../../assets/img/homeSlide_5.png" class="homeSlide_imgs" ></div>
-      <div class="swiper-slide"><img src="../../assets/img/logo_url_black_bkground_2500_x_1152.png" class="homeSlide_imgs" ></div>
-      ...
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
+  <video autoplay src="assets/media/video/homepagevideoApril2017.mp4"></video>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
+  <div>
+    <p>Architecto quisquam ac molestie, mauris, ea, impedit quis! Cupiditate occaecat corporis iure?
+          Torquent curabitur, exercitationem facere dolorem magni bibendum alias, eveniet?
+          Eget tincidunt debitis sapiente modi. Porro ipsum. Tellus recusandae. Atque nascetur a error, lectus, eius.
+          Euismod accumsan adipiscing voluptas architecto ullamco congue quidem nibh taciti neque pulvinar, minus velit non. Viverra aspernatur nunc excepteur anim repellat tincidunt.
+          Adipisicing vivamus. Eveniet nonummy quisquam eleifend, adipisci anim quos litora deleniti scelerisque laboriosam nibh eleifend vitae, dui aut iste aperiam reiciendis reiciendis, lacus voluptatum anim, blandit?
+          Ullamco beatae integer quas minus vel incidunt hac, exercitationem hymenaeos interdum, in alias laudantium magnis venenatis.
+    </p>
   </div>
-
 </ion-content>
-
-<script>
-
-  $(document).ready(function () {
-    var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'vertical',
-      loop: true,
-
-      // If we need pagination
-      pagination: '.swiper-pagination',
-
-      // Navigation arrows
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-
-      // And if we need scrollbar
-      scrollbar: '.swiper-scrollbar'
-    })
-  });
-
-</script>

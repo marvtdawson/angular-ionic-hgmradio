@@ -14,7 +14,7 @@ import { SiteDataProvider } from "../providers/site-data/site-data";
 import { UserAuthProvider } from '../providers/user-auth/user-auth';
 import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
 import { OauthProvider } from '../providers/oauth/oauth';
-import { RedditDataProvider } from "../providers/reddit-data/reddit-data";
+/*import { RedditDataProvider } from "../providers/reddit-data/reddit-data";*/
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -99,7 +99,7 @@ import { RadioPage } from "../pages/radio/radio";
     Network,
     UserAuthProvider,
     SQLite,
-    RedditDataProvider,
+  /*  RedditDataProvider,*/
     NetworkAuthProvider,
     OauthProvider
   ]

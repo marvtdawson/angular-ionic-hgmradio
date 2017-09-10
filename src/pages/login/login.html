@@ -3,14 +3,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ pageTitle }}</ion-title>
+    <ion-title>{{ siteName }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <!-- display page content -->
 <ion-content padding>
   <div class="page-content-top">
-    <p>Welcome back!</p>
+    <h5>{{ pageTitle }}</h5>
   </div>
 
   <form #login="ngForm" (ngSubmit)="onSubmit(login)" >

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, AlertController, Platform } from 'ionic-angular';
+import { IonicPage, Platform } from 'ionic-angular';
 //import { Storage } from '@ionic/storage';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Network } from "@ionic-native/network";
 import { Http } from "@angular/http";
-import { RedditDataProvider } from "../../providers/reddit-data/reddit-data";
+/*import { RedditDataProvider } from "../../providers/reddit-data/reddit-data";*/
 
 
 @IonicPage()
@@ -22,26 +22,25 @@ export class SplashHomePage {
   constructor(public siteData: SiteDataProvider,
               public network: Network,
               public plt: Platform,
-              private alertCtrl: AlertController,
-              public http: Http,
-              public redditService: RedditDataProvider) {
+              /*private alertCtrl: AlertController,*/
+              public http: Http) {
 
     // show connection alert message regarding current platform
-    this.plt.ready().then((readySource) => {
+    /*this.plt.ready().then((readySource) => {
 
       console.log('Platform ready from', readySource);
 
       let alert = this.alertCtrl.create({
-         title: "Connected",
+         title: "Enter",
          subTitle: <string> this.network.type,
          buttons: ["OK"]
        });
        alert.present();
-    });
+    });*/
   }
 
   ionViewDidLoad(){
-    this.redditService.getLocalData();
+
   }
 
 }
