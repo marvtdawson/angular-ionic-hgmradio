@@ -12,7 +12,7 @@ import { ContactUsPage } from "../pages/contact-us/contact-us";
 import { LoginPage } from "../pages/login/login";
 import { RegisterPage } from "../pages/register/register";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
-import { AuthProvider } from "../providers/auth/auth";
+import {NetworkAuthProvider} from "../providers/network-auth/network-auth";
 
 
 
@@ -35,9 +35,9 @@ export class MyApp {
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
               public modalCtrl: ModalController,
-              public auth: AuthProvider,
               public loadingCtrl: LoadingController,
               public siteData: SiteDataProvider,
+              public networkAuth: NetworkAuthProvider
               /*public secureStorage: Storage*/) {
 
     this.initializeApp();
@@ -53,7 +53,7 @@ export class MyApp {
 
     this.presentLoading();
 
-    this.auth.login().then((isLoggedIn) => {
+    this.networkAuth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;

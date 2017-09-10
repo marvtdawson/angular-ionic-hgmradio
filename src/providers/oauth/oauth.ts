@@ -3,24 +3,16 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
-  Generated class for the NetworkAuthProvider provider.
+  Generated class for the OauthProvider provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular DI.
 */
 @Injectable()
-export class NetworkAuthProvider {
+export class OauthProvider {
 
   constructor(public http: Http) {
-    console.log('Hello NetworkAuthProvider Provider');
-  }
-
-  login(){
-    return new Promise((resolve, reject) => {
-      setTimeout(function () {
-        resolve(false);
-      }, 3000);
-    });
+    console.log('Hello OauthProvider Provider');
   }
 
 }

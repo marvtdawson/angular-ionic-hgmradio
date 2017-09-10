@@ -12,6 +12,8 @@ import { SQLite } from "@ionic-native/sqlite";
 
 import { SiteDataProvider } from "../providers/site-data/site-data";
 import { UserAuthProvider } from '../providers/user-auth/user-auth';
+import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
+import { OauthProvider } from '../providers/oauth/oauth';
 import { RedditDataProvider } from "../providers/reddit-data/reddit-data";
 
 import { MyApp } from './app.component';
@@ -32,11 +34,8 @@ import { ProductsPage } from "../pages/products/products";
 import { ServicesPage } from "../pages/services/services";
 import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-conditions";
 import { BlogPage } from "../pages/blog/blog";
-import { AuthProvider } from '../providers/auth/auth';
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
-import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
-
 
 
 @NgModule({
@@ -93,7 +92,7 @@ import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider,
+    OauthProvider,
     SiteDataProvider,
     Media,
     SecureStorage,
@@ -101,7 +100,8 @@ import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
     UserAuthProvider,
     SQLite,
     RedditDataProvider,
-    NetworkAuthProvider
+    NetworkAuthProvider,
+    OauthProvider
   ]
 })
 export class AppModule {}

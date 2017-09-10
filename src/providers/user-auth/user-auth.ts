@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Storage, IonicStorageModule } from '@ionic/storage';
 
 
 /**
@@ -11,8 +12,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserAuthProvider {
 
-  constructor(public http: Http) {
+  constructor(public http: Http,
+              public storage: Storage) {
     console.log('Hello UserAuthProvider Provider');
+
+    storage.set('email', 'adog@hgmradio.com');
+
+    storage.get('email').then((val)=> {
+      console.log('This user email is: ', val);
+    })
   }
 
   // define global user variables, these variables are used
