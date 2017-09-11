@@ -4,7 +4,6 @@ import { IonicPage, Platform } from 'ionic-angular';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Network } from "@ionic-native/network";
 import { Http } from "@angular/http";
-/*import { RedditDataProvider } from "../../providers/reddit-data/reddit-data";*/
 
 
 @IonicPage()
@@ -40,6 +39,7 @@ export class SplashHomePage {
   }
 
   ionViewDidLoad(){
+
 
   }
 
