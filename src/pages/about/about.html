@@ -25,13 +25,13 @@
 <ion-footer no-lines no-border>
   <ion-toolbar position="bottom">
     <!-- Advanced: explicity set the icon for each platform -->
-    <ion-icon ios="ios-settings" md="md-settings" class="footer-icon"></ion-icon>
+    <ion-icon ios="ios-settings" md="md-settings" class="footer-icon" [navPush]="pushMemberSettingsPage"></ion-icon>
 
     <!-- Advanced: explicity set the icon for each platform -->
     <ion-icon ios="ios-home" md="md-home" class="footer-icon" [navPush]="pushHomePage"></ion-icon>
 
     <!-- Advanced: explicity set the icon for each platform -->
-    <ion-icon ios="ios-contact" md="md-contact" class="footer-icon"></ion-icon>
+    <ion-icon ios="ios-contact" md="md-contact" class="footer-icon" [navPush]="pushContactPage"></ion-icon>
 
   </ion-toolbar>
 </ion-footer>

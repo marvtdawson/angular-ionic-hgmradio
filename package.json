@@ -87,7 +87,7 @@
         "zone.js": "^0.8.17"
     },
     "devDependencies": {
-        "ionic": "3.9.2",
+        "ionic": "3.10.3",
         "jasmine": "^2.8.0"
     },
     "cordova": {

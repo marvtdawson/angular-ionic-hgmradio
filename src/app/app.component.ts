@@ -34,12 +34,13 @@ export class MyApp {
   constructor(public platform: Platform,
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
-              public modalCtrl: ModalController,
               public loadingCtrl: LoadingController,
               public siteData: SiteDataProvider,
               public networkAuth: NetworkAuthProvider,
               public userAuth: UserAuthProvider
-              /*public secureStorage: Storage*/) {
+              /*
+              public modalCtrl: ModalController,
+              public secureStorage: Storage*/) {
 
     this.initializeApp();
 
@@ -52,35 +53,35 @@ export class MyApp {
       {title: 'Contact', component: ContactUsPage}
     ];
 
+    // call loading controller for app authentication
     this.presentLoading();
 
     // 1. network connection
     this.networkAuth.networkConnection();
 
-    this.networkAuth.login().then((isLoggedIn) => {
+
+    // 2. check if user login information is present
+    this.userAuth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;
       } else {
-
-        this.rootPage = LoginPage;
+              this.rootPage = LoginPage;
       }
       this.loader.dismiss();
     });
 
-    // 2. authentication of user
+    // 2. get user local info service provider
     this.userAuth.userInfo();
 
   }
-
-
 
   /**
    * show Authenticating loader
    */
   presentLoading() {
     this.loader = this.loadingCtrl.create({
-      content: "Authenticating..."
+      content: "Authenticating App..."
     });
     this.loader.present();
   }

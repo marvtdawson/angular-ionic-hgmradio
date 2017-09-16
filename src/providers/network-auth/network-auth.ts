@@ -19,12 +19,4 @@ export class NetworkAuthProvider {
     return console.log("Establishing Network Connection...");
   }
 
-  login(){
-    return new Promise((resolve, reject) => {
-      setTimeout(function () {
-        resolve(false);
-      }, 3000);
-    });
-  }
-
 }
