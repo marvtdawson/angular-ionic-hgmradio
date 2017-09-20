@@ -59,7 +59,6 @@ export class MyApp {
     // 1. network connection
     this.networkAuth.networkConnection();
 
-
     // 2. check if user login information is present
     this.userAuth.login().then((isLoggedIn) => {
 

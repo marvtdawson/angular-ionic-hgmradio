@@ -3,6 +3,7 @@ import { ContactUsPage} from '../contact-us/contact-us';
 import { SiteDataProvider } from "../../providers/site-data/site-data"
 import {MembersSettingsPage} from "../members/members-settings/members-settings";
 import {HomePage} from "../home/home";
+import {SubscribePage} from "../subscribe/subscribe";
 
 @Component({
   selector: 'about',
@@ -18,5 +19,6 @@ export class AboutPage {
   pushHomePage = HomePage;
   pushContactPage = ContactUsPage;
   pushMemberSettingsPage = MembersSettingsPage;
+  pushSubscribePage = SubscribePage;
 
 }

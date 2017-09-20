@@ -30,13 +30,12 @@ export class UserAuthProvider {
   // with selected persistent data module/application for authentication.
   // Currently CouchDB is the default module being used to store persistent data.
 
-  userInfo() {
+    userInfo() {
 
     let _id: any;
     let uName: string;
     let uEmail: string;
     let specPw: any;
-
   }
 
   login(){
@@ -46,8 +45,5 @@ export class UserAuthProvider {
       }, 3000);
     });
   }
-
-
-
 
 }

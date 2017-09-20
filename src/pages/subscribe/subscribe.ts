@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { SiteDataProvider } from "../../providers/site-data/site-data";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'subscribe',
@@ -6,7 +8,15 @@ import { Component } from '@angular/core';
 })
 
 export class SubscribePage {
-  constructor() {}
-  pageTitle = 'Subscribe';
-  siteName = 'HGM Radio';
+
+  constructor(public siteData: SiteDataProvider) {}
+
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
+  pageTitle: string = 'About';
+  values: any = '';
+
+  showUserKeyedEntry(event: any){
+    this.values += event.target.value;
+  }
 }

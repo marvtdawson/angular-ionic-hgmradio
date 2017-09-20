@@ -38,3 +38,14 @@ HgmRadio.apk
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+package-lock.json
+src/app/app.css
+src/app/app.css.map
+src/pages/page1/page1.css
+src/pages/page1/page1.css.map
+src/pages/page1/page1.js
+src/pages/page1/page1.spec.js
+src/pages/page2/page2.css
+src/pages/page2/page2.css.map
+src/theme/variables.css
+test-config/mocks-ionic.js
