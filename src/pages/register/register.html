@@ -17,44 +17,43 @@
     </p>
   </div>
 
-  <ion-list inset>
-    <ion-item>
-      <ion-label for="regName" floating>First Name</ion-label>
-      <ion-input type="text" name="regFName"  id="regFName"></ion-input>
-    </ion-item>
+  <form #registerForm="ngForm" name="registerForm">
+    <ion-list inset>
+      <ion-item>
+        <ion-label for="regName" floating>First Name</ion-label>
+        <ion-input type="text" name="regFName"  id="regFName" required ngModel></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Last Name</ion-label>
-      <ion-input type="text" id="regLName" ></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" name="regLName" required ngModel></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="text" id="regEmail_1"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" name="regEmail_1" required ngModel></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-label floating>Confirm Email</ion-label>
+        <ion-input type="text" name="regEmail_2" required ngModel></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Confirm Email</ion-label>
-      <ion-input type="text" id="regEmail_2"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" name="regPw" required ngModel></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" id="regPw"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label>Terms & Conditions</ion-label>
+        <ion-checkbox color="dark" checked="true"></ion-checkbox>
+      </ion-item>
 
-    <ion-item>
-      <ion-label>Terms & Conditions</ion-label>
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
-    </ion-item>
-
-    <div class="form-button-wrapper">
-      <button ion-button color="secondary" block>Register</button>
-    </div>
-
+      <div class="form-button-wrapper">
+        <button ion-button color="secondary" block [disabled]="!registerForm.valid">Register</button>
+      </div>
   </ion-list>
-
+  </form>
   <div>
     <p>
       Already a member? <a [navPush]="pushLoginPage">Login</a>

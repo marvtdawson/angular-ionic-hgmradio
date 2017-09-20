@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { FormsModule } from "@angular/forms";
 

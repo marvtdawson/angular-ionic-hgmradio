@@ -1,19 +1,19 @@
-<form name="subscribeForm" #subsribeForm="ngForm">
+<form name="subscribeForm" #subscribeForm="ngForm">
   <ion-list>
 
     <ion-item>
       <ion-label floating>Name</ion-label>
-      <ion-input id="uName" name="uName" type="text" (onkeyup)="showUserKeyedEntry()"></ion-input>
+      <ion-input id="uName" name="uName" type="text" (onkeyup)="showUserKeyedEntry()" required ngModel></ion-input>
       <p>[(ngModel)}="model.uName"</p>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Email</ion-label>
-      <ion-input id="uEmail" name="uEmail" type="text" (onkeyup)="showUserKeyedEntry()"></ion-input>
+      <ion-input id="uEmail" name="uEmail" type="text" (onkeyup)="showUserKeyedEntry()" required ngModel></ion-input>
       <p>[(ngModel)]="model.uEmail"</p>
     </ion-item><br ><br >
 
-    <button ion-button color="secondary" block>Subscribe</button>
+    <button ion-button color="secondary" block [disabled]="!subscribeForm.valid">Subscribe</button>
 
   </ion-list>
 </form>

@@ -356,13 +356,13 @@ page-radio {
       page-radio .artist-pic-wrapper {
         width: 35%;
         min-height: 125px;
-        margin: 0px 0px 0px 45px; }
+        margin: 0 0 0 45px; }
       page-radio .artist-pic-size {
         height: 300px; }
       page-radio .artist-info-wrapper {
         width: 54%;
         height: 300px;
-        margin: 0px 0px 30px 12px; }
+        margin: 0 0 30px 12px; }
       page-radio .controller-wrapper {
         width: 44%;
         margin: 0 auto 0; }
@@ -441,17 +441,17 @@ page-radio {
         margin: 0 auto 0; }
       page-radio .player-info-wrapper {
         width: 93%;
-        margin: 115px 0 35px 10px; }
+        margin: 20px 0 35px 10px; }
       page-radio .artist-pic-wrapper {
         width: 35%;
         min-height: 125px;
-        margin: 0px 0px 0px 45px; }
+        margin: 0 0 0 45px; }
       page-radio .artist-pic-size {
-        height: 300px; }
+        height: 225px; }
       page-radio .artist-info-wrapper {
         width: 54%;
-        height: 300px;
-        margin: 0px 0px 30px 12px; }
+        height: 225px;
+        margin: 0 0 30px 12px; }
       page-radio .control-wrapper {
         width: 100%; }
       page-radio .control-assest {

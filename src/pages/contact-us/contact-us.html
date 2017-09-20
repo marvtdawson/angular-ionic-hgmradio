@@ -15,40 +15,42 @@
      Here at {{ siteName }} we love hearing from you.
     </p>
     <p>
-      Please contact us and let us know what you think, or how we can improve our app, site, products or service to you.
+      Please contact us and let us know what you think, or how we can improve our app, site, products or services to you.
     </p>
 
   </div>
-  <ion-list>
+  <form #contactForm="ngForm" name="contactForm">
+    <ion-list>
     <ion-item>
       <ion-label floating>Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" name="uName" required ngModel></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Email</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" name="uEmail" required ngModel></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>State</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" name="uState" required ngModel></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>City</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" name="uCity" required ngModel></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Message</ion-label>
-      <ion-textarea type="text"></ion-textarea>
+      <ion-textarea type="text" name="contactMessage" required ngModel></ion-textarea>
     </ion-item>
 
     <div class="form-button-wrapper">
-      <button ion-button color="secondary" block>SEND</button>
+      <button ion-button color="secondary" block [disabled]="!contactForm.valid">SEND</button>
     </div>
 
   </ion-list>
+  </form>
 
 </ion-content>
