@@ -444,13 +444,12 @@ page-radio {
         margin: 20px 0 35px 10px; }
       page-radio .artist-pic-wrapper {
         width: 35%;
-        min-height: 125px;
         margin: 0 0 0 45px; }
       page-radio .artist-pic-size {
-        height: 225px; }
+        height: 200px; }
       page-radio .artist-info-wrapper {
         width: 54%;
-        height: 225px;
+        height: 200px;
         margin: 0 0 30px 12px; }
       page-radio .control-wrapper {
         width: 100%; }
