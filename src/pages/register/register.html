@@ -17,10 +17,10 @@
     </p>
   </div>
 
-  <form #registerForm="ngForm" name="registerForm">
+  <form #registerForm="ngForm" name="registerForm" (ngSubmit)="regNewMember(registerForm)">
     <ion-list inset>
       <ion-item>
-        <ion-label for="regName" floating>First Name</ion-label>
+        <ion-label floating>First Name</ion-label>
         <ion-input type="text" name="regFName"  id="regFName" required ngModel></ion-input>
       </ion-item>
 
@@ -46,13 +46,10 @@
 
       <ion-item>
         <ion-label>Terms & Conditions</ion-label>
-        <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        <ion-checkbox color="dark" checked="true" name="TandC" required ngModel ></ion-checkbox>
       </ion-item>
-
-      <div class="form-button-wrapper">
-        <button ion-button color="secondary" block [disabled]="!registerForm.valid">Register</button>
-      </div>
   </ion-list>
+    <button type="submit" ion-button color="secondary" block [disabled]="!registerForm.valid">Register</button>
   </form>
   <div>
     <p>

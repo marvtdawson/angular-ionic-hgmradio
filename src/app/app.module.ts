@@ -36,7 +36,7 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
-
+import { RegNewUser} from "../services/register-user";
 
 @NgModule({
   declarations: [
@@ -101,7 +101,8 @@ import { RadioPage } from "../pages/radio/radio";
     SQLite,
   /*  RedditDataProvider,*/
     NetworkAuthProvider,
-    OauthProvider
+    OauthProvider,
+    RegNewUser,
   ]
 })
 export class AppModule {}

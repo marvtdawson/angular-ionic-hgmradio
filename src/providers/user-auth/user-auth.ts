@@ -15,35 +15,20 @@ export class UserAuthProvider {
 
   constructor(public http: Http,
               public storage: Storage,
-              public loadingCtrl: LoadingController,) {
+              public loadingCtrl: LoadingController) {}
 
-    console.log('Hello UserAuthProvider Provider');
-
-    storage.set('email', 'adog@hgmradio.com');
-
-    storage.get('email').then((val)=> {
-      console.log('This user email is: ', val);
-    })
-  }
+  //storedEmail = this.storage.get('');
 
   // define global user variables, these variables are used
   // with selected persistent data module/application for authentication.
   // Currently CouchDB is the default module being used to store persistent data.
 
-    userInfo() {
-
-    let _id: any;
-    let uName: string;
-    let uEmail: string;
-    let specPw: any;
+  login() {
+      return new Promise((resolve, reject) => {
+        // set timeout function to 3 seconds
+        setTimeout(function () {
+          resolve(false);
+        }, 3000);
+      });
   }
-
-  login(){
-    return new Promise((resolve, reject) => {
-      setTimeout(function () {
-        resolve(false);
-      }, 3000);
-    });
-  }
-
 }

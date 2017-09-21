@@ -65,15 +65,15 @@ export class MyApp {
     this.userAuth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
-        this.rootPage = SplashHomePage;
+        this.rootPage = RadioPage;
       } else {
-              this.rootPage = LoginPage;
+          this.rootPage = LoginPage;
       }
       this.loader.dismiss();
     });
 
     // 2. get user local info service provider
-    this.userAuth.userInfo();
+
 
   }
 
