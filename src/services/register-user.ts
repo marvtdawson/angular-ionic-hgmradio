@@ -17,6 +17,10 @@ export class RegNewUser{
     return this.newUser.slice();
   }
 
+  setUsersStorageData():any{
+
+  }
+
   removeUser(index: number){
     this.newUser.splice(index, 1);
   }
