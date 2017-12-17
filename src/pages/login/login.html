@@ -9,36 +9,43 @@
 
 <!-- display page content -->
 <ion-content padding>
-  <div class="page-content-top">
-    <h5>{{ pageTitle }}</h5>
-  </div>
 
-  <form #login="ngForm" name="login" (ngSubmit)="onSubmit(login)" >
-    <ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+          <div class="page-content-top">
+            <h5>{{ pageTitle }}</h5>
+          </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <form #login="ngForm" name="login" (ngSubmit)="onSubmit(login)" >
+          <ion-list>
 
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="text" name="regEmail_1" required ngModel></ion-input>
-    </ion-item>
+            <ion-item>
+              <ion-label floating>Email</ion-label>
+              <ion-input type="text" name="regEmail_1" required ngModel></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" name="regPw" required ngModel ></ion-input>
-    </ion-item>
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password" name="regPw" required ngModel ></ion-input>
+            </ion-item>
 
-    <div class="form-button-wrapper">
-      <button ion-button color="secondary" block [disabled]="!login.valid">Login</button>
-    </div>
+            <div class="form-button-wrapper">
+              <button ion-button color="secondary" block [disabled]="!login.valid">Login</button>
+            </div>
 
-  </ion-list>
-  </form>
-
-  <div class="login-signup-forgot-text">
-    <p>
-      <a [navPush]="pushForgotPasswordPage"> Forgot password?</a>
-      <span>or <a [navPush]="pushRegisterPage">Sign Up!</a></span>
-    </p>
-
-  </div>
-
+          </ion-list>
+        </form>
+        <div class="login-signup-forgot-text">
+          <p>
+            <a [navPush]="pushForgotPasswordPage"> Forgot password?</a>
+            <span>or <a [navPush]="pushRegisterPage">Sign Up!</a></span>
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
