@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, ModalController, LoadingController } from 'ionic-angular';
+import { Nav, Platform, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //import { Storage } from '@ionic/storage';
@@ -59,7 +59,7 @@ export class MyApp {
     this.presentLoading();
 
     // 1. network connection
-    this.networkAuth.networkConnection();
+    this.networkAuth.checkNetworkConnection();
 
     // 2. check if user login information is present
     this.userAuth.login().then((isLoggedIn) => {
