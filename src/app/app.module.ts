@@ -10,12 +10,16 @@ import { Network } from "@ionic-native/network";
 import { FormsModule } from "@angular/forms";
 import { SQLite } from "@ionic-native/sqlite";
 
+// providers
 import { SiteDataProvider } from "../providers/site-data/site-data";
 import { UserAuthProvider } from '../providers/user-auth/user-auth';
 import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
 import { OauthProvider } from '../providers/oauth/oauth';
-/*import { RedditDataProvider } from "../providers/reddit-data/reddit-data";*/
 
+// services
+import { RegNewUser} from "../services/register-user";
+
+// pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -36,7 +40,7 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
-import { RegNewUser} from "../services/register-user";
+
 
 @NgModule({
   declarations: [
@@ -99,7 +103,6 @@ import { RegNewUser} from "../services/register-user";
     Network,
     UserAuthProvider,
     SQLite,
-  /*  RedditDataProvider,*/
     NetworkAuthProvider,
     OauthProvider,
     RegNewUser,

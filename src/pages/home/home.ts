@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
-import {SiteDataProvider} from "../../providers/site-data/site-data";
+import { SiteDataProvider } from "../../providers/site-data/site-data";
 
 @Component({
   selector: 'page-home',

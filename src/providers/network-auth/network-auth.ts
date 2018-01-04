@@ -12,23 +12,25 @@ import {Network} from "@ionic-native/network";
 @Injectable()
 export class NetworkAuthProvider {
 
-   networkType: string;
+  networkType: string;
 
   constructor(public http: Http,
               private network: Network) {
-    console.log('Hello NetworkAuthProvider');
-   this.networkType = this.network.type;
 
-    console.log(this.networkType );
+    console.log('Hello NetworkAuthProvider');
+
+    this.networkType = this.network.type;
+
+    /*console.log(this.networkType);*/
   }
 
-  checkNetworkConnection(){
+  checkNetworkConnection() {
 
-    if(this.networkType === 'unknown'){
+    if (this.networkType === 'unknown') {
 
       return console.log("Connection Unknown");
     }
-    else if(this.networkType === 'cellular'){
+    else if (this.networkType === 'cellular') {
 
       // add popup warning of possible additional service provider fees could apply
 
@@ -38,16 +40,5 @@ export class NetworkAuthProvider {
       return console.log("Establishing Network Connection...");
     }
   }
-
-
-  networkConnectionType(){
-
-  }
-
-  networkConnectionStatusChanged(){
-
-  }
-
-
 
 }
