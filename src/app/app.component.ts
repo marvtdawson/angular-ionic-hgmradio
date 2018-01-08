@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import firebase from 'firebase';
+
 //import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
@@ -15,6 +17,7 @@ import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { SiteDataProvider } from "../providers/site-data/site-data";
 import { NetworkAuthProvider } from "../providers/network-auth/network-auth";
 import { UserAuthProvider } from "../providers/user-auth/user-auth";
+import { AuthenticateService } from "../services/authenticate-service";
 
 
 @Component({
@@ -38,11 +41,16 @@ export class MyApp {
               public loadingCtrl: LoadingController,
               public siteData: SiteDataProvider,
               public networkAuth: NetworkAuthProvider,
-              public userAuth: UserAuthProvider
+              public userAuth: UserAuthProvider,
+              public authService: AuthenticateService
               /*
               public modalCtrl: ModalController,
-              public secureStorage: Storage*/) {
-
+              public secureStorage: Storage*/
+             ) {
+    firebase.initializeApp({
+      apiKey: "AIzaSyDNkbko2E9nLq2P652SER5Wyyz4wrJffh0",
+      authDomain: "hgmradio-86b55.firebaseapp.com",
+    });
     this.initializeApp();
 
     // used for an example of ngFor and navigation

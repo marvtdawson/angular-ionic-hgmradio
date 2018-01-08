@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { LoginPage } from '../login/login';
-import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Storage } from "@ionic/storage";
 import { NgForm } from "@angular/forms";
-import { RegNewUser} from "../../services/register-user";
+
+// Services and Providers
+import { SiteDataProvider } from "../../providers/site-data/site-data";
+import { RegNewUserService } from "../../services/register-user-service";
+import { RegisterUserModel } from "../../models/register-users-model";
+import { AuthenticateService } from "../../services/authenticate-service";
 
 @Component({
   selector: 'register',
@@ -18,17 +22,59 @@ export class RegisterPage{
   pageTitle = 'Register';
   pushLoginPage = LoginPage;
 
+
   constructor(public siteData: SiteDataProvider,
               public storage: Storage,
-              private regUserService: RegNewUser){}
+              private regUserService: RegNewUserService,
+              private authService: AuthenticateService){}
 
-  regNewMember(form: NgForm){
+  listRegUsers: RegisterUserModel[];
+
+  ionViewWillEnter(){
+    this.loadUsers();
+  }
+
+  /**
+   * Provide the application with Authentication
+   * via Google Firebase and registration to a
+   * NoSQL Schema
+   *
+   * @param {NgForm} form
+   */
+  onRegNewMember(form: NgForm){
+    // send new user email and password to Firebase
+    this.authService.registerNewUser(form.value.regEmail_1,
+                                      form.value.regPw)
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+
+    // send new user information to NoSQL schema, if applicable
     this.regUserService.addUser(form.value.regFName,
                                 form.value.regLName,
                                 form.value.regEmail_1,
                                 form.value.regEmail_2,
-                                form.value.regPw);
+                                form.value.regPw,
+                                form.value.regTaC);
     form.reset();
+    this.loadUsers(); // get the latest or newest information from list
+  }
+
+  /**
+   * This function removes a user from display ion-list
+   * @param {number} index
+   */
+  onRemoveUser(index: number){
+    this.regUserService.removeUser(index);
+    this.loadUsers();
+  }
+
+  /**
+   * For testing and debugging purpose only.
+   * Please
+   * retrieve list items of user entered form information
+   */
+  private loadUsers(){
+    this.listRegUsers = this.regUserService.getUsers();
   }
 
 }

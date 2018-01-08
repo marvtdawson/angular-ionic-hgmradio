@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Network} from "@ionic-native/network";
+import {AlertController} from "ionic-angular";
 
 /*
   Generated class for the NetworkAuthProvider provider.
@@ -15,16 +16,21 @@ export class NetworkAuthProvider {
   networkType: string;
 
   constructor(public http: Http,
-              private network: Network) {
+              private network: Network,
+              public alertCtrl: AlertController) {
 
     console.log('Hello NetworkAuthProvider');
 
-    this.networkType = this.network.type;
-
-    /*console.log(this.networkType);*/
+    console.log("This network connection is a " + this.networkType + " connection!");
   }
 
+
+
+
   checkNetworkConnection() {
+
+    // check connection types
+
 
     if (this.networkType === 'unknown') {
 
@@ -36,7 +42,14 @@ export class NetworkAuthProvider {
 
       return console.log("Cellular Connection Present...");
 
-    } else {
+    }
+    else if (this.networkType === 'wifi') {
+
+      // add popup warning of possible additional service provider fees could apply
+
+      return console.log("WiFi Connection Present...");
+
+    }else {
       return console.log("Establishing Network Connection...");
     }
   }

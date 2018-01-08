@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { ToastController } from 'ionic-angular';
+import { ToastController, AlertController } from 'ionic-angular';
 import { Subscription } from "rxjs/Subscription";
-import { ForgotPasswordPage } from '../../pages/forgot-password/forgot-password';
-import { RegisterPage } from '../../pages/register/register';
-import { NgForm } from "@angular/forms";
-import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Network } from "@ionic-native/network";
+import { NgForm } from "@angular/forms";
+
+// Services and Providers
+import { SiteDataProvider } from "../../providers/site-data/site-data";
+
+// Pages
+import { ForgotPasswordPage } from "../forgot-password/forgot-password";
+import { RegisterPage } from "../register/register";
 
 
 @Component({
@@ -19,8 +23,9 @@ export class LoginPage{
   disconnected: Subscription;
 
   constructor(public siteData: SiteDataProvider,
-  private network: Network,
-  private toast: ToastController,
+              private network: Network,
+              private toast: ToastController,
+              public alertCtrl:  AlertController
               ){}
 
   pageTitle: string = 'Login';
@@ -29,11 +34,11 @@ export class LoginPage{
   pushForgotPasswordPage = ForgotPasswordPage;
   pushRegisterPage = RegisterPage;
 
-  displayNetworkUpdate(connectionState: string){
+  displayNetworkUpdate(connectionState: string){ // pass the connection state of the application (online or offline)
 
     let networkType = this.network.type;
 
-    this.toast.create({
+    this.toast.create({  // create a pop up toast with the connection state and network type
       message: `You are now ${connectionState} via ${networkType}`,
       duration: 3000
     }).present();
@@ -43,16 +48,18 @@ export class LoginPage{
 
   ionViewDidEnter(){
     this.connected = this.network.onConnect().subscribe(data => {
-      console.log(data);
+      console.log('What is this connected data status Marvin? ' + data.type);
       this.displayNetworkUpdate(data.type);
     },
         error => console.error(error));
 
     this.disconnected = this.network.onDisconnect().subscribe(data => {
-      console.log(data);
+      console.log('What is this disconnected data status Marvin? ' + data.type);
       this.displayNetworkUpdate(data.type);
       },
         error => console.error(error));
+
+    this.showNetworkAlert();
   }
 
   ionViewWillLeave(){
@@ -72,8 +79,17 @@ export class LoginPage{
        console.log("This is your data: " + data);
      }); */
 
-
   }
+
+  showNetworkAlert(){
+
+  let alert = this.alertCtrl.create({
+    title: 'Network Connection',
+    subTitle: 'Your connection is Marvin!',
+    buttons: ['OK']
+  });
+  alert.present();
+}
 
 }
 

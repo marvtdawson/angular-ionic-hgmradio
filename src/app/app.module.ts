@@ -17,7 +17,9 @@ import { NetworkAuthProvider } from '../providers/network-auth/network-auth';
 import { OauthProvider } from '../providers/oauth/oauth';
 
 // services
-import { RegNewUser} from "../services/register-user";
+import { RegNewUserService } from "../services/register-user-service";
+import { LoginUserService } from "../services/login-user-service";
+import { AuthenticateService } from "../services/authenticate-service";
 
 // pages
 import { MyApp } from './app.component';
@@ -40,6 +42,7 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
+
 
 
 @NgModule({
@@ -105,7 +108,9 @@ import { RadioPage } from "../pages/radio/radio";
     SQLite,
     NetworkAuthProvider,
     OauthProvider,
-    RegNewUser,
+    RegNewUserService,
+    LoginUserService,
+    AuthenticateService
   ]
 })
 export class AppModule {}

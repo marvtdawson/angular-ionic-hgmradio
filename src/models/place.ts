@@ -1,4 +1,4 @@
-import {Location} from "./location";
+import {Location} from "./users-location-model";
 
 export class Place{
   constructor(public title: string,

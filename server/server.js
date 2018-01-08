@@ -3,6 +3,9 @@ var app         = express();
 var logger      = require('morgan');
 var bodyParser  = require('body-parser');
 var cors        = require('cors');
+var mongoose    = require('mongoose');
+
+mongoose.Conn;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

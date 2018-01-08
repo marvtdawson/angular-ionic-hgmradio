@@ -17,7 +17,7 @@
     </p>
   </div>
 
-  <form #registerForm="ngForm" name="registerForm" (ngSubmit)="regNewMember(registerForm)">
+  <form #registerForm="ngForm" name="registerForm" (ngSubmit)="onRegNewMember(registerForm)">
     <ion-list inset>
       <ion-item>
         <ion-label floating>First Name</ion-label>
@@ -46,11 +46,16 @@
 
       <ion-item>
         <ion-label>Terms & Conditions</ion-label>
-        <ion-checkbox color="dark" checked="true" name="TandC" required ngModel ></ion-checkbox>
+        <ion-checkbox color="dark" checked="true" name="regTaC" required ngModel ></ion-checkbox>
       </ion-item>
   </ion-list>
     <button type="submit" ion-button color="secondary" block [disabled]="!registerForm.valid">Register</button>
   </form>
+  <ion-list>
+    <ion-item *ngFor="let currUser of listRegUsers; let i = index" (click)="onRemoveUser(i)">
+      <h3>{{ currUser.regFName}} {{ currUser.regLName }}</h3>
+    </ion-item>
+  </ion-list>
   <div>
     <p>
       Already a member? <a [navPush]="pushLoginPage">Login</a>
