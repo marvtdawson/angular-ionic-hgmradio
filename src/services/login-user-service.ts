@@ -9,8 +9,6 @@ export class LoginUserService{
 
   constructor(public storage: Storage){}
 
-  getCurrentUser(){
-
-  }
+  getCurrentUser(){}
 
 }

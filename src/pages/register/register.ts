@@ -8,6 +8,7 @@ import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { RegNewUserService } from "../../services/register-user-service";
 import { RegisterUserModel } from "../../models/register-users-model";
 import { AuthenticateService } from "../../services/authenticate-service";
+import { AlertController, LoadingController} from "ionic-angular";
 
 @Component({
   selector: 'register',
@@ -26,7 +27,9 @@ export class RegisterPage{
   constructor(public siteData: SiteDataProvider,
               public storage: Storage,
               private regUserService: RegNewUserService,
-              private authService: AuthenticateService){}
+              private authService: AuthenticateService,
+              private loadingCtrl: LoadingController,
+              private alterCtrl: AlertController){}
 
   listRegUsers: RegisterUserModel[];
 
@@ -42,11 +45,25 @@ export class RegisterPage{
    * @param {NgForm} form
    */
   onRegNewMember(form: NgForm){
+    const loading = this.loadingCtrl.create({
+      content: "Registering New User..."
+    });
+    loading.present();
     // send new user email and password to Firebase
     this.authService.registerNewUser(form.value.regEmail_1,
                                       form.value.regPw)
-      .then(data => console.log(data))
-      .catch(error => console.log(error));
+      .then(data => {
+        loading.dismiss();
+      })
+      .catch(error => {
+       loading.dismiss();
+       const alert = this.alterCtrl.create({
+         title: 'Registration Failed!',
+         message: error.message,
+         buttons: ['Ok']
+       });
+       alert.present();
+      });
 
     // send new user information to NoSQL schema, if applicable
     this.regUserService.addUser(form.value.regFName,

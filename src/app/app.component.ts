@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, LoadingController } from 'ionic-angular';
+import {Nav, Platform, LoadingController, MenuController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
@@ -38,11 +38,12 @@ export class MyApp {
   constructor(public platform: Platform,
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
+              private menuCtrl: MenuController,
               public loadingCtrl: LoadingController,
               public siteData: SiteDataProvider,
               public networkAuth: NetworkAuthProvider,
-              public userAuth: UserAuthProvider,
-              public authService: AuthenticateService
+              private userAuth: UserAuthProvider,
+              private authService: AuthenticateService
               /*
               public modalCtrl: ModalController,
               public secureStorage: Storage*/
@@ -100,6 +101,11 @@ export class MyApp {
     this.loader = this.loadingCtrl.create({
       content: "Please Register"
     })
+  }
+
+  onLogOut(){
+      this.authService.signOut();
+      this.menuCtrl.close();
   }
 
   initializeApp() {

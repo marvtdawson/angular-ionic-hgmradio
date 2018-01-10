@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { ToastController, AlertController } from 'ionic-angular';
+import {ToastController, AlertController, LoadingController} from 'ionic-angular';
 import { Subscription } from "rxjs/Subscription";
 import { Network } from "@ionic-native/network";
 import { NgForm } from "@angular/forms";
 
 // Services and Providers
 import { SiteDataProvider } from "../../providers/site-data/site-data";
+import { AuthenticateService } from "../../services/authenticate-service";
 
 // Pages
 import { ForgotPasswordPage } from "../forgot-password/forgot-password";
 import { RegisterPage } from "../register/register";
+
 
 
 @Component({
@@ -25,7 +27,9 @@ export class LoginPage{
   constructor(public siteData: SiteDataProvider,
               private network: Network,
               private toast: ToastController,
-              public alertCtrl:  AlertController
+              private alertCtrl:  AlertController,
+              private loadingCtrl: LoadingController,
+              private authService: AuthenticateService
               ){}
 
   pageTitle: string = 'Login';
@@ -44,7 +48,27 @@ export class LoginPage{
     }).present();
   }
 
-  onSubmit(login: NgForm){}
+  onLogin(form: NgForm){
+
+    const loading = this.loadingCtrl.create({
+      content: 'Logging In...'
+    });
+    loading.present();
+
+    this.authService.signInUser(form.value.regEmail_1, form.value.regPw)
+      .then(data => {
+        loading.dismiss();
+      })
+      .catch(error => {
+        loading.dismiss();
+        const alert = this.alertCtrl.create({
+          title: 'Signin Failed!',
+          message: error.message,
+          buttons: ['Try Again']
+        });
+        alert.present();
+      })
+  }
 
   ionViewDidEnter(){
     this.connected = this.network.onConnect().subscribe(data => {
