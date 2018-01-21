@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import { LoginPage } from '../login/login';
 import { Storage } from "@ionic/storage";
 import { NgForm } from "@angular/forms";
@@ -15,13 +15,15 @@ import { AlertController, LoadingController} from "ionic-angular";
   templateUrl: 'register.html'
 })
 
-export class RegisterPage{
+export class RegisterPage implements OnInit, OnChanges{
 
   // static site data
   siteName = this.siteData.siteName;
   appVersion = this.siteData.appVersion;
   pageTitle = 'Register';
   pushLoginPage = LoginPage;
+  value = '';
+  regEmail_1 = this.regEmail_1;
 
 
   constructor(public siteData: SiteDataProvider,
@@ -29,7 +31,17 @@ export class RegisterPage{
               private regUserService: RegNewUserService,
               private authService: AuthenticateService,
               private loadingCtrl: LoadingController,
-              private alterCtrl: AlertController){}
+              private alterCtrl: AlertController){
+    console.log('Constructor Called!');
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log('ngOnChanges happen ' + changes);
+  }
+
+  ngOnInit(){
+    console.log('ngOnInit Called!');
+  }
 
   listRegUsers: RegisterUserModel[];
 
@@ -92,6 +104,18 @@ export class RegisterPage{
    */
   private loadUsers(){
     this.listRegUsers = this.regUserService.getUsers();
+  }
+
+  onKeyUpEntry(value: string){
+    if(this.value === this.regEmail_1){
+      const alert = this.alterCtrl.create({
+        title: 'Email Match!',
+        message: 'Success',
+        buttons: ['Continue']
+      });
+      console.log('Email checker');
+      alert.present();
+    }
   }
 
 }

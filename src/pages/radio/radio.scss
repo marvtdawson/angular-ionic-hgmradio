@@ -25,7 +25,7 @@ page-radio {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#000;
+    background:fixed #000;
     /*  background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
      background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
      background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -36,19 +36,19 @@ page-radio {
          color-stop(0, #A7A7A7),
          color-stop(0.51, #E4E4E4)
      ); */
-    background-attachment:fixed;
+    /*background-attachment:fixed;*/
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:0;
     text-transform:uppercase;
     width:100%;
   }
   .connection-error{
     color: red;
     font-size: 9px;
-    font-family: Arial;
+    font-family: Arial sans-serif;
   }
   /* ############################# START 1366 PX ############################### */
   @media(max-width: 1366px){
@@ -89,13 +89,13 @@ page-radio {
       width: 100%;
       min-height: 100px;
       float: left;
-      margin-top: 0px;
+      margin-top: 0;
       margin-bottom: 35px;
     }
     .artist-pic-wrapper{
       width: 20%;
       min-height: 125px;
-      margin: 0px 0px 0px 100px;
+      margin: 0 0 0 100px;
       float: left;
       text-align: center;
     }
@@ -110,7 +110,7 @@ page-radio {
       border: 1px groove #008000;
       background-color: #0c0c0c;
       border-radius: 5px;
-      margin: 50px 89px 0px 70px;
+      margin: 50px 89px 0 70px;
       float: left;
     }
     .artist-info-text-outer {
@@ -135,13 +135,13 @@ page-radio {
     }
     .nowPlaying-inner-text{
       color: #FFF;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       font-weight: bold;
       font-size: 16px;
     }
     .nowPlaying-outer-text{
       color: #008000;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       font-weight: bold;
       font-size: 16px;
       clear: both;
@@ -150,28 +150,28 @@ page-radio {
     /* #### START PLAYER BUTTONS  #### */
     button{ border:none; cursor:pointer; outline:none; }
     button#playpausebtn{
-      background:url('../assets/img/player/pause_button.png') no-repeat;
+      background:url('../../assets/img/player/pause_button.png') no-repeat;
       width:12px;
       height:14px;
-      margin: 22px 10px 0px 0px ;
+      margin: 22px 10px 0 0 ;
       float: left;
     }
     button#mutebtn{
       background:url('../../assets/img/player/unmute_button.png') no-repeat;
       width:5px;
       height:14px;
-      margin: 22px 10px 0px 0px ;
+      margin: 22px 10px 0 0 ;
       float: left;
     }
     div#timebox{
       display: block;
       float: left;
       width: 100px;
-      margin: 20px 10px 0px 0px ;
+      margin: 20px 10px 0 0 ;
       background: #000;
       text-align: center;
       color: #008000;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       font-weight: bold;
       font-size: 11px;
     }
@@ -179,7 +179,7 @@ page-radio {
       width: 180px;
       display: block;
       float: left;
-      margin: 20px 10px 0px 0px ;
+      margin: 20px 10px 0 0 ;
       color: white;
     }
     #seekslider{
@@ -189,7 +189,7 @@ page-radio {
       width: 180px;
       display: block;
       float: left;
-      margin: 20px 10px 0px 0px ;
+      margin: 20px 10px 0 0 ;
     }
     #volumeslider{
 
@@ -199,9 +199,9 @@ page-radio {
       border-radius: 4px;
       height: 20px;
       width: 20px;
-      margin-top: 0px;
+      margin-top: 0;
       cursor: pointer;
-      border-radius: 1px solid grey;
+      border: 1px solid grey;
       box-shadow: 1px 1px 1px #000000;
     }
     input[type=range]::-moz-range-thumb{
@@ -214,7 +214,7 @@ page-radio {
     /* #### START REGISTER FORM #### */
     .formWrapper {
       width: 65%;
-      margin: 0px auto 0px;
+      margin: 0 auto 0;
       text-align: right;
       background-color: #171616;
       padding: 20px;
@@ -230,7 +230,7 @@ page-radio {
     }
     .already-member-text{
       font-size: 12px;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       color: #363606;
     }
     .member-login{
@@ -312,7 +312,7 @@ page-radio {
     .adDiv-support-text{
       color: #545454;
       font-size: 9px;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       top: 7px;
       position: relative;
       left: 5px;
@@ -377,8 +377,9 @@ page-radio {
       text-align: left;
     }
     .player-logo-size {
-      width: 65%;
+      width: 100%;
       height: 70px;
+      margin: 10px auto 0;
     }
     .homePage-logo-wrapper{
       margin: 175px auto 30px;
@@ -396,7 +397,7 @@ page-radio {
       background: #000;
       text-align: center;
       color: #008000;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       font-weight: bold;
       font-size: 11px;
     }
@@ -453,7 +454,7 @@ page-radio {
     #seekslider {
       width: 54%;
       float: left;
-      margin: 0px 10px 0 0;
+      margin: 0 10px 0 0;
     }
     button#mutebtn {
       margin: 5px 15px 0 0;
@@ -489,7 +490,7 @@ page-radio {
     #adDivinfo {
       width: 93%;
       min-height: 220px;
-      margin: 0px auto 0;
+      margin: 0 auto 0;
       border: 2px solid #F00;
     }
     .adDiv-support-text{
@@ -573,7 +574,7 @@ page-radio {
     #seekslider {
       width: 54%;
       float: left;
-      margin: 0px 10px 0 0;
+      margin: 0 10px 0 0;
     }
     button#mutebtn {
       margin: 5px 15px 0 0;
@@ -629,7 +630,6 @@ page-radio {
       text-align: center;
     }
     .player-logo-size{
-      width: 60%;
       height: 65px;
     }
     .hgmPlayer-logo-size{
@@ -649,7 +649,7 @@ page-radio {
     .artist-pic-wrapper{
       width: 20%;
       min-height: 125px;
-      margin: 0px 0 0 100px;
+      margin: 0 0 0 100px;
       float: left;
       text-align: center;
     }
@@ -729,7 +729,7 @@ page-radio {
     .adDiv-support-text{
       color: #545454;
       font-size: 9px;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       top: 7px;
       position: relative;
       left: 5px;
@@ -782,7 +782,6 @@ page-radio {
       height: 150px;
     }
     .player-logo-size{
-      width: 60%;
       height: 63px;
     }
     .player-info-wrapper {
@@ -824,7 +823,6 @@ page-radio {
       height: 150px;
     }
     .player-logo-size{
-      width: 60%;
       height: 60px;
     }
 
@@ -843,7 +841,7 @@ page-radio {
     #adDivinfo {
       width: 93%;
       min-height: 220px;
-      margin: 0px auto 0;
+      margin: 0 auto 0;
       border: 2px solid #F00;
     }
     .adDiv-support-text{
@@ -872,7 +870,6 @@ page-radio {
       height: 150px;
     }
     .player-logo-size{
-      width: 65%;
       height: 57px;
     }
 
@@ -916,17 +913,15 @@ page-radio {
     }
     .member-login {
       right: 4px;
-      top: 0px;
+      top: 0;
     }
     .homePage-logo-wrapper{
       margin: 175px auto 30px;
     }
     .homePage-logo-size{
-      width: 83%;
       height: 150px;
     }
     .player-logo-size {
-      width: 62%;
       height: 60px;
     }
     .page-title-h2-wrapper{
@@ -954,7 +949,7 @@ page-radio {
     .nav-mobile-button{
       width: 40px;
       height: 40px;
-      background-image:url('../img/mobile_menu_button_no_bkground.png');
+      /*background-image:url('../../img/mobile_menu_button_no_bkground.png');*/
       background-repeat: no-repeat;
       background-size: 40px 40px;
       display: block;
@@ -973,14 +968,13 @@ page-radio {
   @media(max-width: 400px){
     .appWrapper{
       width: 100%;
-      height: 0px;
+      height: 0;
       border: none;
     }
     .homePage-logo-wrapper{
       margin: 175px auto 30px;
     }
     .homePage-logo-size{
-      width: 85%;
       height: 150px;
     }
 
@@ -994,7 +988,7 @@ page-radio {
     #adDivinfo {
       width: 93%;
       min-height: 220px;
-      margin: 0px auto 0;
+      margin: 0 auto 0;
       border: 2px solid #F00;
     }
     .adDiv-support-text{
@@ -1014,14 +1008,13 @@ page-radio {
   @media(max-width: 375px){
     .appWrapper{
       width: 100%;
-      height: 0px;
+      height: 0;
       border: none;
     }
     .homePage-logo-wrapper{
       margin: 95px auto 30px;
     }
     .homePage-logo-size{
-      width: 96%;
       height: 150px;
     }
     /* #### START AD BANNER #### */
@@ -1041,7 +1034,7 @@ page-radio {
     }
     .player-info-wrapper {
       width: 93%;
-      margin: 115px 0 35px 10px;
+      margin: 115px auto 35px;
     }
 
 
@@ -1058,7 +1051,7 @@ page-radio {
   @media(max-width: 360px){
     .appWrapper{
       width: 100%;
-      height: 0px;
+      height: 0;
       border: none;
     }
     #appHeader-logo {
@@ -1073,12 +1066,11 @@ page-radio {
       height: 150px;
     }
     .player-logo-size {
-      width: 60%;
       height: 55px;
     }
     .inner-app-logo{
       width: 70%;
-      margin: 0px auto 0;
+      margin: 0 auto 0;
       text-align: center;
     }
     .logo{
@@ -1102,8 +1094,8 @@ page-radio {
 
     /* #### START ARTIST INFO #### */
     .player-info-wrapper{
-      width: 93%;
-      margin: 115px 0 35px 10px;
+      width: 90%;
+      margin: 35px auto 35px;
       position: absolute;
       z-index: 0;
     }
@@ -1122,7 +1114,7 @@ page-radio {
     .artist-info-wrapper{
       width: 80%;
       min-height: 150px;
-      margin: 25px 0px 0px 35px;
+      margin: 25px 0 0 35px;
       float: none;
     }
     .artist-info-text-outer{
@@ -1148,7 +1140,7 @@ page-radio {
     }
     /* #### START CONTROLLER #### */
     .controlWrapper{
-      margin: 10px auto 0px;
+      margin: 10px auto 0;
       border-radius: 10px;
       border: 1px solid #545454;
       width: 75%;
@@ -1162,12 +1154,12 @@ page-radio {
       display: block;
       float: right;
       width: 100px;
-      margin: 24px 10px 0px 175px;
+      margin: 24px 10px 0 175px;
       position: absolute;
       background: #000;
       text-align: center;
       color: #008000;
-      font-family: Arial;
+      font-family: Arial sans-serif;
       font-weight: bold;
       font-size: 11px;
     }
@@ -1220,7 +1212,7 @@ page-radio {
     #adDivinfo {
       width: 93%;
       min-height: 220px;
-      margin: 0px auto 0;
+      margin: 0 auto 0;
       border: 2px solid #F00;
     }
     .app-version-wrapper{
@@ -1239,7 +1231,7 @@ page-radio {
   @media(max-width: 320px){
     .appWrapper{
       width: 100%;
-      height: 0px;
+      height: 0;
       border: none;
     }
     .appHeader-logo{
@@ -1273,7 +1265,7 @@ page-radio {
     .artist-info-wrapper{
       width: 80%;
       min-height: 150px;
-      margin: 25px 0px 0px 35px;
+      margin: 25px 0 0 35px;
       float: none;
     }
     /* #### START NOW PLAYING  #### */
