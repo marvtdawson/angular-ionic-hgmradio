@@ -16,26 +16,84 @@ import { Media } from '@ionic-native/media';
 })
 
 export class RadioPage {
+
+  progressInterval: any;
+  siteName = this.siteData.siteName;
+  appVersion = this.siteData.appVersion;
+  tracks: any;
+  artistName: string = 'Doujah Raze';
+  cdName: string;
+  playingStatus: boolean = true;
+  currentTrack: any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public siteData: SiteDataProvider,
               private media: Media) {
 
     this.tracks = [
-      {title: 'Something About You', artist: 'ODESZA', playing: false, progress: 0},
-      {title: 'Run', artist: 'Allison Wonderland', playing: false, progress: 0},
-      {title: 'Breathe', artist: 'Seeb Neev', playing: false, progress: 0},
-      {title: 'HyperParadise', artist: 'Hermitude', playing: false, progress: 0},
-      {title: 'Lifespan', artist: 'Vaults', playing: false, progress: 0},
-      {title: 'Stay High', artist: 'Tove Lo', playing: false, progress: 0},
-      {title: 'Lean On', artist: 'Major Lazer', playing: false, progress: 0},
-      {title: 'They Say', artist: 'Kilter', playing: false, progress: 0}
+      {title: 'Destiny', artistName: 'King Biggie', cdName:'UnSigned', playingStatus: false, progress: 0},
+      {title: 'Thuggin', artistName: 'S Dot', cdName: 'Top Dawg', playingStatus: false, progress: 0},
+      {title: 'Word Play', artistName: 'Verb', cdName:'Verbcabulary', playingStatus: false, progress: 0},
+      {title: 'Where You Are', artistName: 'Doujah Raze', cdName:'Hood Love', playingStatus: false, progress: 0},
+      {title: 'She\'s Mind', artistName: 'Wayne Starr', cdName:'Nucca Please', playingStatus: false, progress: 0},
+      {title: 'Stay High', artistName: 'Tote Mac', cdName:'420', playingStatus: false, progress: 0},
+      {title: 'Lean', artistName: 'Major Lazer',cdName:'Plugged', playingStatus: false, progress: 0},
+      {title: 'They Say', artistName: 'Spitter', cdName:'Rumors', playingStatus: false, progress: 0}
     ];
 
     this.currentTrack = this.tracks[0];
   }
-  siteName = this.siteData.siteName;
-  appVersion = this.siteData.appVersion;
+
+  playTrack(track){
+
+    // First stop any currently playing tracks
+
+    for(let checkTrack of this.tracks){
+
+      if(checkTrack.playingStatus){
+        this.pauseTrack(checkTrack);
+      }
+
+    }
+
+    track.playingStatus = true;
+    this.currentTrack = track;
+
+    // Simulate track playing
+    this.progressInterval = setInterval(() => {
+
+      track.progress < 100 ? track.progress++ : track.progress = 0;
+
+    }, 1000);
+
+  }
+
+  pauseTrack(track){
+
+    track.playingStatus = false;
+    clearInterval(this.progressInterval);
+
+  }
+
+  nextTrack(){
+
+    let index = this.tracks.indexOf(this.currentTrack);
+    index >= this.tracks.length - 1 ? index = 0 : index++;
+
+    this.playTrack(this.tracks[index]);
+
+  }
+
+  prevTrack(){
+
+    let index = this.tracks.indexOf(this.currentTrack);
+    index > 0 ? index-- : index = this.tracks.length - 1;
+
+    this.playTrack(this.tracks[index]);
+
+  }
+
 
   // Create a Media instance.  Expects path to file or url as argument
   // We can optionally pass a second argument to track the status of the media
@@ -45,9 +103,6 @@ export class RadioPage {
     console.log('ionViewDidLoad RadioPage');
   }
 
-  tracks: any;
-  playing: boolean = true;
-  currentTrack: any;
-  progressInterval: any;
+
 
 }

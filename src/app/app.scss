@@ -36,6 +36,10 @@ $background-color: (base-bg-color: #000);
 ion-footer ion-icon{
   margin-left:21%;
   font-size: 2em;
-  height: 40px;
+  height: 10px;
   color: #FFFFFF;
+}
+
+ion-header{
+  background: transparent;
 }

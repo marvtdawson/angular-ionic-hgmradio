@@ -39,25 +39,10 @@
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Confirm Email</ion-label>
-        <ion-input type="text"
-                   name="regEmail_2"
-                   #regEmail_2
-                   required
-                   ngModel
-                   [email]="true"
-                   (keyup.enter)="onKeyUpEntry(regEmail_2.value)"></ion-input>
-      </ion-item>
-
-      <ion-item>
         <ion-label floating>Password</ion-label>
         <ion-input type="password" name="regPw" required ngModel></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label>Terms & Conditions</ion-label>
-        <ion-checkbox color="dark" checked="false" name="regTaC" required ngModel></ion-checkbox>
-      </ion-item>
   </ion-list>
     <button type="submit" ion-button color="secondary" block [disabled]="!registerForm.valid">Register</button>
   </form>

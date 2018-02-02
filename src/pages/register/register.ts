@@ -61,7 +61,7 @@ export class RegisterPage implements OnInit, OnChanges{
       content: "Registering New User..."
     });
     loading.present();
-    // send new user email and password to Firebase
+    // send new user email and password to Google Firebase
     this.authService.registerNewUser(form.value.regEmail_1,
                                       form.value.regPw)
       .then(data => {
@@ -81,9 +81,7 @@ export class RegisterPage implements OnInit, OnChanges{
     this.regUserService.addUser(form.value.regFName,
                                 form.value.regLName,
                                 form.value.regEmail_1,
-                                form.value.regEmail_2,
-                                form.value.regPw,
-                                form.value.regTaC);
+                                form.value.regPw);
     form.reset();
     this.loadUsers(); // get the latest or newest information from list
   }
@@ -104,18 +102,6 @@ export class RegisterPage implements OnInit, OnChanges{
    */
   private loadUsers(){
     this.listRegUsers = this.regUserService.getUsers();
-  }
-
-  onKeyUpEntry(value: string){
-    if(this.value === this.regEmail_1){
-      const alert = this.alterCtrl.create({
-        title: 'Email Match!',
-        message: 'Success',
-        buttons: ['Continue']
-      });
-      console.log('Email checker');
-      alert.present();
-    }
   }
 
 }

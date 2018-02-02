@@ -50,6 +50,78 @@ page-radio {
     font-size: 9px;
     font-family: Arial sans-serif;
   }
+
+  .ios, .md {
+
+    page-radio{
+
+      $song-card-height: 90px;
+
+      ion-list {
+
+        margin-bottom: $song-card-height + 20px;
+
+        .alternate {
+          background-color: map-get($colors, secondary);
+        }
+
+        .playing {
+
+          background-color: map-get($colors, dark);
+
+          img {
+            opacity: 0.4;
+          }
+        }
+      }
+
+      ion-avatar {
+        position: relative;
+        border-radius: 0%;
+      }
+
+      ion-spinner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 4px !important;
+      }
+
+      [ion-item] {
+        background-color: map-get($colors, primary);
+        padding: 20px;
+      }
+
+      ion-card {
+        background-color: map-get($colors, light);
+        opacity: 0.9;
+        height: $song-card-height;
+        bottom: 0;
+      }
+
+      ion-footer {
+        height: 75px;
+        background-color: map-get($colors, dark);
+
+        ion-grid, ion-row, ion-col {
+          height: 100%;
+        }
+
+        ion-col {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .card-header-md,
+      .card-header-ios{
+        font-size: 1.6rem;
+        color: green;
+        padding: 16px;
+      }
+    }
+
+  }
   /* ############################# START 1366 PX ############################### */
   @media(max-width: 1366px){
     /* body{
@@ -346,6 +418,9 @@ page-radio {
 
   /* ############################## START 768 PX ################################# */
   @media(max-width: 768px){
+    ion-navbar.toolbar{
+      min-height: 70px;
+    }
     .headerWrapper {
       width: 100%;
       position: absolute;
@@ -377,7 +452,7 @@ page-radio {
       text-align: left;
     }
     .player-logo-size {
-      width: 100%;
+      width: 30%;
       height: 70px;
       margin: 10px auto 0;
     }
@@ -420,7 +495,7 @@ page-radio {
     .artist-info-wrapper {
       width: 54%;
       height: 300px;
-      margin: 0 0 30px 12px;
+      margin: 20px auto 0;
     }
     .artist-info-text-outer{
 
@@ -436,6 +511,7 @@ page-radio {
     }
     #audio-controls{
       margin:0 auto 0;
+      width: 98%;
     }
     .control-wrapper{
       width: 100%;
@@ -543,16 +619,17 @@ page-radio {
       margin: 20px 0 35px 10px;
     }
     .artist-pic-wrapper {
-      width: 35%;
-      margin: 0 0 0 45px;
+      width: 98%;
+      margin: 0 auto 0;
     }
     .artist-pic-size {
-      height: 200px;
+      width: 100%;
+      height: 275px;
+      margin: 0 auto 0;
     }
     .artist-info-wrapper {
       width: 54%;
       height: 200px;
-      margin: 0 0 30px 12px;
     }
     .artist-info-text-outer{
 
@@ -647,22 +724,14 @@ page-radio {
       margin: 115px 0 35px 10px;
     }
     .artist-pic-wrapper{
-      width: 20%;
-      min-height: 125px;
-      margin: 0 0 0 100px;
+      height: 275px;
+      margin: 0;
       float: left;
       text-align: center;
     }
-    .artist-pic-size {
-      width: 100%;
-      height: 130px;
-      margin: 0 auto 0;
-    }
     .artist-info-wrapper{
-      width: 40%;
-      min-height: 125px;
+      width: 98%;
       border-radius: 5px;
-      margin: 0 0 0 65px;
       float: left;
     }
     .artist-info-text-outer{
@@ -1034,7 +1103,7 @@ page-radio {
     }
     .player-info-wrapper {
       width: 93%;
-      margin: 115px auto 35px;
+      margin: 5px auto 35px;
     }
 
 
@@ -1118,7 +1187,7 @@ page-radio {
       float: none;
     }
     .artist-info-text-outer{
-      font-size: 11px;
+      font-size: 20px;
     }
     .artist-info-text-inner{
       color: #008000;
@@ -1254,18 +1323,23 @@ page-radio {
     /* #### START ARTIST INFO #### */
     .player-info-wrapper{
       width: 93%;
-      margin: 115px 0 35px 10px;
+      margin: 0 auto 35px;
+    }
+    .artist-pic-size {
+      width: 70%;
+      height: 200px;
+      margin: 0 auto 0;
     }
     .artist-pic-wrapper{
       width: 100%;
-      min-height: 150px;
+      height: 150px;
       margin: 0 auto 0;
       float: none;
     }
     .artist-info-wrapper{
-      width: 80%;
-      min-height: 150px;
-      margin: 25px 0 0 35px;
+      width: 98%;
+      height: 165px;
+      margin: 75px auto 0;
       float: none;
     }
     /* #### START NOW PLAYING  #### */

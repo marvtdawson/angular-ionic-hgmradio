@@ -99,7 +99,7 @@
         "zone.js": "^0.8.20"
     },
     "devDependencies": {
-        "ionic": "3.19.0",
+        "ionic": "3.19.1",
         "jasmine": "^2.9.0"
     },
     "cordova": {

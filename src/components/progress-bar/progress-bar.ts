@@ -1,11 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
-/**
- * Generated class for the ProgressBarComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+
 @Component({
   selector: 'progress-bar',
   templateUrl: 'progress-bar.html'
@@ -13,6 +8,8 @@ import { Component } from '@angular/core';
 export class ProgressBarComponent {
 
   text: string;
+
+  @Input('progress') progress;
 
   constructor() {
     console.log('Hello ProgressBarComponent Component');

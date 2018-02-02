@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { HttpModule } from "@angular/http";
+import { HttpClientModule } from "@angular/common/http";
+import { HttpModule} from "@angular/http";
 import { IonicStorageModule } from '@ionic/storage';
 import { SecureStorage } from "@ionic-native/secure-storage";
 import { Media } from "@ionic-native/media";
@@ -20,6 +21,7 @@ import { OauthProvider } from '../providers/oauth/oauth';
 import { RegNewUserService } from "../services/register-user-service";
 import { LoginUserService } from "../services/login-user-service";
 import { AuthenticateService } from "../services/authenticate-service";
+import { DataStorageService} from "../services/data-storage-service";
 
 // pages
 import { MyApp } from './app.component';
@@ -42,8 +44,6 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
-
-
 
 @NgModule({
   declarations: [
@@ -71,6 +71,7 @@ import { RadioPage } from "../pages/radio/radio";
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    HttpClientModule,
     IonicStorageModule.forRoot(),
     FormsModule
   ],
@@ -110,7 +111,8 @@ import { RadioPage } from "../pages/radio/radio";
     OauthProvider,
     RegNewUserService,
     LoginUserService,
-    AuthenticateService
+    AuthenticateService,
+    DataStorageService
   ]
 })
 export class AppModule {}

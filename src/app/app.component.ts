@@ -76,7 +76,7 @@ export class MyApp {
       if (isLoggedIn === true) {
         this.rootPage = RadioPage;
       } else {
-          this.rootPage = LoginPage;
+          this.rootPage = RadioPage;
       }
       this.loader.dismiss();
     });
