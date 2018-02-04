@@ -67,8 +67,8 @@ export class MyApp {
     // call loading controller for app authentication
     this.presentLoading();
 
-    // 1. network connection
-    this.networkAuth.checkNetworkConnection();
+    // 2. check if network still connected
+    //this.networkAuth.isNetworkStillConnected();
 
     // 2. check if user login information is present
     this.userAuth.login().then((isLoggedIn) => {
@@ -76,7 +76,7 @@ export class MyApp {
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;
       } else {
-          this.rootPage = RadioPage;
+          this.rootPage = SplashHomePage;
       }
       this.loader.dismiss();
     });

@@ -4,6 +4,7 @@ import { IonicPage, Platform } from 'ionic-angular';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Network } from "@ionic-native/network";
 import { Http } from "@angular/http";
+import { NetworkAuthProvider} from "../../providers/network-auth/network-auth";
 
 
 @IonicPage()
@@ -22,7 +23,8 @@ export class SplashHomePage {
               public network: Network,
               public plt: Platform,
               /*private alertCtrl: AlertController,*/
-              public http: Http) {
+              public http: Http,
+              private networkAuth: NetworkAuthProvider) {
 
     // show connection alert message regarding current platform
     /*this.plt.ready().then((readySource) => {
@@ -36,10 +38,9 @@ export class SplashHomePage {
        });
        alert.present();
     });*/
-  }
 
-  ionViewDidLoad(){
-
+    // 1. network connection
+    this.networkAuth.checkNetworkConnection();
 
   }
 

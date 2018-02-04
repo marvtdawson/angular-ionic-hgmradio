@@ -2,22 +2,16 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Network} from "@ionic-native/network";
-import {AlertController} from "ionic-angular";
+//import {AlertController} from "ionic-angular";
 
-/*
-  Generated class for the NetworkAuthProvider provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
 @Injectable()
 export class NetworkAuthProvider {
 
-
-
   constructor(public http: Http,
               private networkType: Network,
-              public alertCtrl: AlertController) {}
+              //private alertCtrl: AlertController
+             ) {}
 
 
   /**
@@ -31,7 +25,7 @@ export class NetworkAuthProvider {
     const networkSubscriptionType = this.networkType.onConnect().subscribe(() => {
 
       setTimeout( () => {
-        if(this.networkType.type === 'Unknown') {
+        if(this.networkType.type === 'unknown') {
 
           return console.log("Connection Unknown");
 
@@ -71,7 +65,10 @@ export class NetworkAuthProvider {
           return console.log("4g Connection Present...");
 
         }
-        else if (this.networkType.type === 'cellular') {
+        else if (this.networkType.type === 'cellular'){
+          return console.log("None is the Connection type...");
+        }
+        else if (this.networkType.type === 'none') {
 
           // add popup warning of possible additional service provider fees could apply
 
@@ -87,6 +84,17 @@ export class NetworkAuthProvider {
 
     networkSubscriptionType.unsubscribe();
 
+  }
+
+  isNetworkStillConnected() {
+
+    // watch network for a disconnect
+    const disconnectSubscription = this.networkType.onDisconnect().subscribe(() => {
+      console.log('network was disconnected :-(');
+    });
+
+    // stop disconnect watch
+    disconnectSubscription.unsubscribe();
   }
 
 }
