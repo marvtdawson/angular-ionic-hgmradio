@@ -13,45 +13,80 @@ import {AlertController} from "ionic-angular";
 @Injectable()
 export class NetworkAuthProvider {
 
-  networkType: string;
+
 
   constructor(public http: Http,
-              private network: Network,
-              public alertCtrl: AlertController) {
-
-    console.log('Hello NetworkAuthProvider');
-
-    console.log("This network connection is a " + this.networkType + " connection!");
-  }
+              private networkType: Network,
+              public alertCtrl: AlertController) {}
 
 
-
+  /**
+   * The `type` property will return one of the following
+   * connection types: `unknown`, `ethernet`, `wifi`, `2g`, `3g`, `4g`, `cellular`, `none`
+   *
+   */
 
   checkNetworkConnection() {
 
-    // check connection types
+    const networkSubscriptionType = this.networkType.onConnect().subscribe(() => {
 
+      setTimeout( () => {
+        if(this.networkType.type === 'Unknown') {
 
-    if (this.networkType === 'unknown') {
+          return console.log("Connection Unknown");
 
-      return console.log("Connection Unknown");
-    }
-    else if (this.networkType === 'cellular') {
+        }
+        else if (this.networkType.type === 'ethernet') {
 
-      // add popup warning of possible additional service provider fees could apply
+          // add popup warning of possible additional service provider fees could apply
 
-      return console.log("Cellular Connection Present...");
+          return console.log("Ethernet Connection Present...");
 
-    }
-    else if (this.networkType === 'wifi') {
+        }
+        else if (this.networkType.type === 'wifi') {
 
-      // add popup warning of possible additional service provider fees could apply
+          // add popup warning of possible additional service provider fees could apply
 
-      return console.log("WiFi Connection Present...");
+          return console.log("Wifi Connection Present...");
 
-    }else {
-      return console.log("Establishing Network Connection...");
-    }
+        }
+        else if (this.networkType.type === '2g') {
+
+          // add popup warning of possible additional service provider fees could apply
+
+          return console.log("2g  Connection Present...");
+
+        }
+        else if (this.networkType.type === '3g') {
+
+          // add popup warning of possible additional service provider fees could apply
+
+          return console.log("3g Connection Present...");
+
+        }
+        else if (this.networkType.type === '4g') {
+
+          // add popup warning of possible additional service provider fees could apply
+
+          return console.log("4g Connection Present...");
+
+        }
+        else if (this.networkType.type === 'cellular') {
+
+          // add popup warning of possible additional service provider fees could apply
+
+          return console.log("Cellular Connection Present...");
+
+        }
+        else {
+          return console.log("Network Connection Type Equals None...");
+        }
+      }, 3000);
+
+    });
+
+    networkSubscriptionType.unsubscribe();
+
   }
 
 }
