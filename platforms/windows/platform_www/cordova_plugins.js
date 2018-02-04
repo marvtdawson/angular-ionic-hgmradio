@@ -384,6 +384,14 @@ module.exports = [
         "file": "plugins/phonegap-plugin-push/src/windows/PushPluginProxy.js",
         "pluginId": "phonegap-plugin-push",
         "runs": true
+    },
+    {
+        "id": "cordova-plugin-uniquedeviceid.UniqueDeviceID",
+        "file": "plugins/cordova-plugin-uniquedeviceid/www/uniqueid.js",
+        "pluginId": "cordova-plugin-uniquedeviceid",
+        "merges": [
+            "window.plugins.uniqueDeviceID"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -403,7 +411,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-sqlite-storage": "2.1.4",
     "ionic-plugin-keyboard": "2.2.1",
-    "phonegap-plugin-push": "1.10.6"
+    "phonegap-plugin-push": "1.10.6",
+    "cordova-plugin-uniquedeviceid": "1.3.2"
 };
 // BOTTOM OF METADATA
 });

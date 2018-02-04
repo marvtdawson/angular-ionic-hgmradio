@@ -87,4 +87,7 @@
     <feature name="MusicControls">
         <param name="android-package" value="com.homerours.musiccontrols.MusicControls" />
     </feature>
+    <feature name="UniqueDeviceID">
+        <param name="android-package" value="hu.dpal.phonegap.plugins.UniqueDeviceID" />
+    </feature>
 </widget>

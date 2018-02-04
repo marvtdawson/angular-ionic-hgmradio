@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Media } from '@ionic-native/media';
+import {UniqueDeviceID} from "@ionic-native/unique-device-id";
 
 /**
  * Generated class for the RadioPage page.
@@ -25,11 +26,14 @@ export class RadioPage {
   cdName: string;
   playingStatus: boolean = true;
   currentTrack: any;
+  userUDID: string;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public siteData: SiteDataProvider,
-              private media: Media) {
+              private media: Media,
+              private platform: Platform,
+              private udId: UniqueDeviceID) {
 
     this.tracks = [
       {title: 'Destiny', artistName: 'King Biggie', cdName:'UnSigned', playingStatus: false, progress: 0},
@@ -43,6 +47,8 @@ export class RadioPage {
     ];
 
     this.currentTrack = this.tracks[0];
+
+    this.getUdId();
   }
 
   playTrack(track){
@@ -94,6 +100,20 @@ export class RadioPage {
 
   }
 
+  /**
+   * Get Device Unique Id
+   * @returns {Promise<void>}
+   */
+  async getUdId()  {
+    try {
+      await this.platform.ready();
+
+      this.userUDID = await this.udId.get();
+
+    }catch (e) {
+      console.error(e);
+    }
+  }
 
   // Create a Media instance.  Expects path to file or url as argument
   // We can optionally pass a second argument to track the status of the media

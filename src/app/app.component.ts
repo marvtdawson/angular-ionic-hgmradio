@@ -74,7 +74,7 @@ export class MyApp {
     this.userAuth.login().then((isLoggedIn) => {
 
       if (isLoggedIn === true) {
-        this.rootPage = RadioPage;
+        this.rootPage = SplashHomePage;
       } else {
           this.rootPage = RadioPage;
       }

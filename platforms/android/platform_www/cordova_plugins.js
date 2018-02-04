@@ -290,6 +290,14 @@ module.exports = [
     "clobbers": [
       "MusicControls"
     ]
+  },
+  {
+    "id": "cordova-plugin-uniquedeviceid.UniqueDeviceID",
+    "file": "plugins/cordova-plugin-uniquedeviceid/www/uniqueid.js",
+    "pluginId": "cordova-plugin-uniquedeviceid",
+    "merges": [
+      "window.plugins.uniqueDeviceID"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -308,7 +316,8 @@ module.exports.metadata =
   "phonegap-plugin-push": "1.10.6",
   "cordova-plugin-file": "6.0.1",
   "cordova-plugin-media": "5.0.1",
-  "cordova-plugin-music-controls": "2.1.4"
+  "cordova-plugin-music-controls": "2.1.4",
+  "cordova-plugin-uniquedeviceid": "1.3.2"
 };
 // BOTTOM OF METADATA
 });

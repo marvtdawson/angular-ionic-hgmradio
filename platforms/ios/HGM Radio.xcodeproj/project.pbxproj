@@ -48,6 +48,8 @@
 		6AF5A739B26E4FD09ECC8CDC /* MusicControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B50D9917839487989FE6EBF /* MusicControls.m */; };
 		1371826EC861417B9D0EBA02 /* MusicControlsInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4D76306C3740A69713AE5F /* MusicControlsInfo.m */; };
 		06D20E9A9A03418FA2CA7B2D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA79BCD42D14696A40E2AD4 /* MediaPlayer.framework */; };
+		A054D34A91284D8F9D0F1783 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1955F2680BD64699A2C5BDAC /* UICKeyChainStore.m */; };
+		8ED910B9FCAA45CEB8B482A0 /* CDVUniqueDeviceID.m in Sources */ = {isa = PBXBuildFile; fileRef = 427AB706862B404FB9F97CE9 /* CDVUniqueDeviceID.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,10 @@
 		31D87F2A007841C3A384F9C2 /* MusicControls.h */ = {isa = PBXFileReference; name = "MusicControls.h"; path = "cordova-plugin-music-controls/MusicControls.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		B83332B49E0642EFB85B5F4C /* MusicControlsInfo.h */ = {isa = PBXFileReference; name = "MusicControlsInfo.h"; path = "cordova-plugin-music-controls/MusicControlsInfo.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		4DA79BCD42D14696A40E2AD4 /* MediaPlayer.framework */ = {isa = PBXFileReference; name = "MediaPlayer.framework"; path = "System/Library/Frameworks/MediaPlayer.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1955F2680BD64699A2C5BDAC /* UICKeyChainStore.m */ = {isa = PBXFileReference; name = "UICKeyChainStore.m"; path = "cordova-plugin-uniquedeviceid/UICKeyChainStore.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		427AB706862B404FB9F97CE9 /* CDVUniqueDeviceID.m */ = {isa = PBXFileReference; name = "CDVUniqueDeviceID.m"; path = "cordova-plugin-uniquedeviceid/CDVUniqueDeviceID.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		03F95A6BF0304557A8DA8D53 /* UICKeyChainStore.h */ = {isa = PBXFileReference; name = "UICKeyChainStore.h"; path = "cordova-plugin-uniquedeviceid/UICKeyChainStore.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		185CEACD603948A28ED3CD8A /* CDVUniqueDeviceID.h */ = {isa = PBXFileReference; name = "CDVUniqueDeviceID.h"; path = "cordova-plugin-uniquedeviceid/CDVUniqueDeviceID.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +315,10 @@
 				830AA85A6AF84DF78548079F /* MainViewController+MusicControls.h */,
 				31D87F2A007841C3A384F9C2 /* MusicControls.h */,
 				B83332B49E0642EFB85B5F4C /* MusicControlsInfo.h */,
+				1955F2680BD64699A2C5BDAC /* UICKeyChainStore.m */,
+				427AB706862B404FB9F97CE9 /* CDVUniqueDeviceID.m */,
+				03F95A6BF0304557A8DA8D53 /* UICKeyChainStore.h */,
+				185CEACD603948A28ED3CD8A /* CDVUniqueDeviceID.h */,
 			);
 			name = Plugins;
 			path = "HGM Radio/Plugins";
@@ -445,6 +455,8 @@
 				CBF615E411D342C3ADED0AB9 /* MainViewController+MusicControls.m in Sources */,
 				6AF5A739B26E4FD09ECC8CDC /* MusicControls.m in Sources */,
 				1371826EC861417B9D0EBA02 /* MusicControlsInfo.m in Sources */,
+				A054D34A91284D8F9D0F1783 /* UICKeyChainStore.m in Sources */,
+				8ED910B9FCAA45CEB8B482A0 /* CDVUniqueDeviceID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

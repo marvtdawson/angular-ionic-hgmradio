@@ -10,6 +10,7 @@ import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
 import { Network } from "@ionic-native/network";
 import { FormsModule } from "@angular/forms";
 import { SQLite } from "@ionic-native/sqlite";
+import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 
 // providers
 import { SiteDataProvider } from "../providers/site-data/site-data";
@@ -44,6 +45,7 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
+
 
 @NgModule({
   declarations: [
@@ -112,7 +114,8 @@ import { RadioPage } from "../pages/radio/radio";
     RegNewUserService,
     LoginUserService,
     AuthenticateService,
-    DataStorageService
+    DataStorageService,
+    UniqueDeviceID
   ]
 })
 export class AppModule {}
