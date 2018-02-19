@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, Platform } from 'ionic-angular';
+import {IonicPage, ModalController, Platform} from 'ionic-angular';
 //import { Storage } from '@ionic/storage';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Network } from "@ionic-native/network";
-import { Http } from "@angular/http";
+import { HttpClientModule } from "@angular/common/http";
 import { NetworkAuthProvider} from "../../providers/network-auth/network-auth";
+import { AlertController } from "ionic-angular";
 
 
 @IonicPage()
@@ -22,12 +23,13 @@ export class SplashHomePage {
   constructor(public siteData: SiteDataProvider,
               public network: Network,
               public plt: Platform,
-              /*private alertCtrl: AlertController,*/
-              public http: Http,
+              private alertCtrl: AlertController,
+              private modal: ModalController,
+              public http: HttpClientModule,
               private networkAuth: NetworkAuthProvider) {
 
     // show connection alert message regarding current platform
-    /*this.plt.ready().then((readySource) => {
+   /* this.plt.ready().then((readySource) => {
 
       console.log('Platform ready from', readySource);
 
