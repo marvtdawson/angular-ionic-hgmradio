@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {IonicPage, ModalController, Platform} from 'ionic-angular';
-//import { Storage } from '@ionic/storage';
+// import { Storage } from '@ionic/storage';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Network } from "@ionic-native/network";
 import { HttpClientModule } from "@angular/common/http";
 import { NetworkAuthProvider} from "../../providers/network-auth/network-auth";
-import { AlertController } from "ionic-angular";
+// import { AlertController } from "ionic-angular";
 
 
 @IonicPage()
@@ -23,7 +23,7 @@ export class SplashHomePage {
   constructor(public siteData: SiteDataProvider,
               public network: Network,
               public plt: Platform,
-              private alertCtrl: AlertController,
+              //private alertCtrl: AlertController,
               private modal: ModalController,
               public http: HttpClientModule,
               private networkAuth: NetworkAuthProvider) {
@@ -45,5 +45,16 @@ export class SplashHomePage {
     this.networkAuth.checkNetworkConnection();
 
   }
+
+  ionViewDidEnter() {
+    this.network.onConnect().subscribe(data => {
+      console.log(data);
+    }, error => console.error(error));
+
+    this.network.onDisconnect().subscribe(data => {
+      console.log(data);
+      }, error => console.error(error));
+  }
+
 
 }

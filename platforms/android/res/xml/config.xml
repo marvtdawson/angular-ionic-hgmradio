@@ -51,7 +51,7 @@
     <name>HGM Radio</name>
     <description>Home Grown Musiq Radio</description>
     <author email="marvintdawson@gmail.com" href="http://www.homegrownmusiq.com/">Home Grown Musiq Design Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://172.31.99.169:8101" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -60,6 +60,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="http://172.31.99.169:8101" />
     <allow-intent href="market:*" />
     <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
     <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />

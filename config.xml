@@ -3,7 +3,7 @@
     <name>HGM Radio</name>
     <description>Home Grown Musiq Radio</description>
     <author email="marvintdawson@gmail.com" href="http://www.homegrownmusiq.com/">Home Grown Musiq Design Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://172.31.99.169:8101" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />
@@ -90,11 +90,12 @@
     <plugin name="phonegap-plugin-push" spec="^1.10.5">
         <variable name="SENDER_ID" value="XXXXXXXXX" />
     </plugin>
-    <engine name="android" spec="6.4.0" />
-    <engine name="browser" spec="4.1.0" />
-    <engine name="ios" spec="4.5.4" />
-    <engine name="windows" spec="~5.0.0" />
     <plugin name="cordova-plugin-media" spec="^5.0.1" />
     <plugin name="cordova-plugin-music-controls" spec="^2.1.4" />
     <plugin name="cordova-plugin-uniquedeviceid" spec="^1.3.2" />
+    <allow-navigation href="http://172.31.99.169:8101" />
+    <engine name="android" spec="6.4.0" />
+    <engine name="browser" spec="4.1.0" />
+    <engine name="windows" spec="5.0.0" />
+    <engine name="ios" spec="4.5.4" />
 </widget>

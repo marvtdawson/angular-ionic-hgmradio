@@ -14,8 +14,6 @@ export class NetworkAuthProvider {
               private networkType: Network,
               private alertCtrl: AlertController
              ) {}
-
-
   /**
    * The `type` property will return one of the following
    * connection types: `unknown`, `ethernet`, `wifi`, `2g`, `3g`, `4g`, `cellular`, `none`
@@ -35,7 +33,6 @@ export class NetworkAuthProvider {
         else if (this.networkType.type === 'ethernet') {
 
           // add popup warning of possible additional service provider fees could apply
-
           const alert = this.alertCtrl.create({
             title: "Ethernet Connect Found",
             subTitle: <string> this.networkType.type,
