@@ -51,7 +51,7 @@
     <name>HGM Radio</name>
     <description>Home Grown Musiq Radio</description>
     <author email="marvintdawson@gmail.com" href="http://www.homegrownmusiq.com/">Home Grown Musiq Design Team</author>
-    <content original-src="index.html" src="http://172.31.99.169:8101" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />

@@ -13,7 +13,9 @@ export class NetworkAuthProvider {
   constructor(public http: Http,
               private networkType: Network,
               private alertCtrl: AlertController
-             ) {}
+             ) {
+    console.log("Network Auth File Constructor was Found");
+  }
   /**
    * The `type` property will return one of the following
    * connection types: `unknown`, `ethernet`, `wifi`, `2g`, `3g`, `4g`, `cellular`, `none`
@@ -22,7 +24,11 @@ export class NetworkAuthProvider {
 
   checkNetworkConnection() {
 
+    console.log('Inside the Check Network Function');
+
     const networkSubscriptionType = this.networkType.onConnect().subscribe(() => {
+
+      console.log('Check Network Connection is Subscribe to');
 
       setTimeout( () => {
         if(this.networkType.type === 'unknown') {
@@ -120,6 +126,12 @@ export class NetworkAuthProvider {
 
         }
         else {
+          const alert = this.alertCtrl.create({
+            title: "Connection Status Equals None",
+            subTitle: <string> this.networkType.type,
+            buttons: ["OK"]
+          });
+          alert.present();
           return console.log("Network Connection Type Equals None...");
         }
       }, 3000);

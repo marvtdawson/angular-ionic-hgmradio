@@ -76,7 +76,7 @@ export class MyApp {
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;
       } else {
-          this.rootPage = SplashHomePage;
+          this.rootPage = RadioPage;
       }
       this.loader.dismiss();
     });
@@ -110,7 +110,7 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then((readySource) => {
-      console.log('Platform ready from inside InitialApp function', readySource);
+     // console.log('Platform ready from inside InitialApp function', readySource);
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();

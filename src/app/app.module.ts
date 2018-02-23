@@ -45,6 +45,7 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
+import { MusicControls } from "@ionic-native/music-controls";
 
 
 @NgModule({
@@ -115,7 +116,8 @@ import { RadioPage } from "../pages/radio/radio";
     LoginUserService,
     AuthenticateService,
     DataStorageService,
-    UniqueDeviceID
+    UniqueDeviceID,
+    MusicControls
   ]
 })
 export class AppModule {}

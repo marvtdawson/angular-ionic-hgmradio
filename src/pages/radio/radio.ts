@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Media } from '@ionic-native/media';
-import {UniqueDeviceID} from "@ionic-native/unique-device-id";
+import { UniqueDeviceID } from "@ionic-native/unique-device-id";
+import { MusicControls } from "@ionic-native/music-controls";
 
 /**
  * Generated class for the RadioPage page.
@@ -32,6 +33,7 @@ export class RadioPage {
               public navParams: NavParams,
               public siteData: SiteDataProvider,
               private media: Media,
+              private musicControls: MusicControls,
               private platform: Platform,
               private udId: UniqueDeviceID) {
 
