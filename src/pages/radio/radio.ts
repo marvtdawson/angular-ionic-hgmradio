@@ -51,6 +51,7 @@ export class RadioPage {
     this.currentTrack = this.tracks[0];
 
     this.getUdId();
+
   }
 
   playTrack(track){
@@ -123,6 +124,9 @@ export class RadioPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RadioPage');
+    const audioPlayer
+    if()
+
   }
 
 
