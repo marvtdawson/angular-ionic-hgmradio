@@ -12,7 +12,7 @@
     <progress-bar [progress]="currentTrack.progress"></progress-bar>
   </ion-navbar>
   <ion-item no-lines class="controller-wrapper">
-    <audio id="audio-controls" controls autoplay controlsList="nodownload">
+    <audio id="audio-controls" controls autoplay controlsList="nodownload" #audio_controls >
       <source src="./assets/media/music/platinumsellersbeats+jcoletypeloveyourzfreedl.mp3">
     </audio>
   </ion-item >

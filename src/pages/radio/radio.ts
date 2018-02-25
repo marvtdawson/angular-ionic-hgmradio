@@ -124,9 +124,9 @@ export class RadioPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RadioPage');
-    const audioPlayer
+    /*const audioPlayer = this.
     if()
-
+*/
   }
 
 
