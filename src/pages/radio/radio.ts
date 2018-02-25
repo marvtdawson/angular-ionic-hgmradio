@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { SiteDataProvider } from "../../providers/site-data/site-data";
 import { Media } from '@ionic-native/media';
@@ -19,6 +19,10 @@ import { MusicControls } from "@ionic-native/music-controls";
 
 export class RadioPage {
 
+  @ViewChild('audio_controls')
+
+  audio_controls;
+
   progressInterval: any;
   siteName = this.siteData.siteName;
   appVersion = this.siteData.appVersion;
@@ -28,6 +32,8 @@ export class RadioPage {
   playingStatus: boolean = true;
   currentTrack: any;
   userUDID: string;
+
+
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -124,9 +130,10 @@ export class RadioPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RadioPage');
-    /*const audioPlayer = this.
-    if()
-*/
+    // const audioPlayer = this.audio_controls.nativeElement.value;
+
+    // console.log(this.audio_controls.nativeElement.value);
+
   }
 
 
