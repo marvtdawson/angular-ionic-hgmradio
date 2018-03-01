@@ -21,7 +21,8 @@ export class RadioPage {
 
   @ViewChild('audio_controls')
 
-  audio_controls;
+  audio_controls: any;
+  trak_source: any;
 
   progressInterval: any;
   siteName = this.siteData.siteName;
@@ -32,7 +33,7 @@ export class RadioPage {
   playingStatus: boolean = true;
   currentTrack: any;
   userUDID: string;
-
+  staticSong: any;
 
 
   constructor(public navCtrl: NavController,
@@ -57,6 +58,9 @@ export class RadioPage {
     this.currentTrack = this.tracks[0];
 
     this.getUdId();
+
+    const staticSong = this.trak_source.duration;
+    console.log(staticSong);
 
   }
 

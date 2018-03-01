@@ -18,6 +18,7 @@ import { SiteDataProvider } from "../providers/site-data/site-data";
 import { NetworkAuthProvider } from "../providers/network-auth/network-auth";
 import { UserAuthProvider } from "../providers/user-auth/user-auth";
 import { AuthenticateService } from "../services/authenticate-service";
+import {ArtistProfilePage} from "../pages/artist-profile/artist-profile";
 
 
 @Component({
@@ -61,7 +62,8 @@ export class MyApp {
       {title: 'Radio', component: RadioPage},
       {title: 'Register', component: RegisterPage},
       {title: 'Login', component: LoginPage},
-      {title: 'Contact', component: ContactUsPage}
+      {title: 'Contact', component: ContactUsPage},
+      {title: 'Artist', component: ArtistProfilePage}
     ];
 
     // call loading controller for app authentication

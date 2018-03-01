@@ -46,6 +46,7 @@ import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
 import { MusicControls } from "@ionic-native/music-controls";
+import {ArtistProfilePage} from "../pages/artist-profile/artist-profile";
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { MusicControls } from "@ionic-native/music-controls";
     ListPage,
     AboutPage,
     AdminLoginPage,
+    ArtistProfilePage,
     ContactUsPage,
     ForgotPasswordPage,
     LoginPage,
@@ -97,7 +99,8 @@ import { MusicControls } from "@ionic-native/music-controls";
     TermsAndConditionsPage,
     BlogPage,
     SplashHomePage,
-    RadioPage
+    RadioPage,
+    ArtistProfilePage
   ],
   providers: [
     StatusBar,

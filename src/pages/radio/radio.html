@@ -12,46 +12,12 @@
     <progress-bar [progress]="currentTrack.progress"></progress-bar>
   </ion-navbar>
   <ion-item no-lines class="controller-wrapper">
-    <audio id="audio-controls" controls autoplay controlsList="nodownload" #audio_controls >
-      <source src="./assets/media/music/platinumsellersbeats+jcoletypeloveyourzfreedl.mp3">
+    <audio #audio_controls id="audio-player" controls autoplay controlsList="nodownload">
+      <source #trak_source src="./assets/media/music/platinumsellersbeats+jcoletypeloveyourzfreedl.mp3">
     </audio>
   </ion-item >
 </ion-header>
-<ion-content padding>
-  <!--ion-card>
-    <img src="./assets/media/artist/D/Doujah_Raze/doujah_raze1.jpg" alt="Doujah Raze" title="">
-    <ion-card-content class="artist-info-text-outer">
-      <ion-card-title>Artist: {{ artistName }}</ion-card-title>
-      <p>CD: Doujah Raze</p>
-      <p>Hometown: Bronx</p>
-      <p>State: New York</p>
-    </ion-card-content>
-    <ion-row text-center>
-      <ion-col>
-        <button ion-button icon-left clear>
-          <ion-icon name="thumbs-up"></ion-icon>
-          Likes
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear>
-        <ion-icon name="person"></ion-icon> Profile
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-card-->
-
-
-  <!--ion-card ion-fixed>
-
-    <ion-card-header>
-      Now Playing
-    </ion-card-header>
-    <ion-card-content>
-      <p>{{currentTrack.artistName}}</p>
-      <p>{{currentTrack.title}}</p>
-    </ion-card-content>
-  </ion-card-->
+<ion-content>
 
   <ion-list no-lines>
     <button detail-none ion-item *ngFor="let track of tracks; let i = index;" (click)="track.playingStatus ? pauseTrack(track) : playTrack(track)" [ngClass]="{ 'alternate': i % 2, 'playing': track.playingStatus }">
