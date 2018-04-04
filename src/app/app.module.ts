@@ -1,16 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule} from "@angular/http";
+import { FormsModule } from "@angular/forms";
+
 import { IonicStorageModule } from '@ionic/storage';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+
 import { SecureStorage } from "@ionic-native/secure-storage";
 import { Media } from "@ionic-native/media";
-import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
 import { Network } from "@ionic-native/network";
-import { FormsModule } from "@angular/forms";
 import { SQLite } from "@ionic-native/sqlite";
 import { UniqueDeviceID } from "@ionic-native/unique-device-id";
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { MusicControls } from "@ionic-native/music-controls";
 
 // providers
 import { SiteDataProvider } from "../providers/site-data/site-data";
@@ -26,10 +30,9 @@ import { DataStorageService} from "../services/data-storage-service";
 
 // pages
 import { MyApp } from './app.component';
+import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { AboutPage } from "../pages/about/about";
 import { AdminLoginPage } from "../pages/admin-login/admin-login";
 import { ContactUsPage } from "../pages/contact-us/contact-us";
@@ -45,13 +48,14 @@ import { TermsAndConditionsPage } from "../pages/terms-and-conditions/terms-and-
 import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
-import { MusicControls } from "@ionic-native/music-controls";
-import {ArtistProfilePage} from "../pages/artist-profile/artist-profile";
+import { ArtistProfilePage } from "../pages/artist-profile/artist-profile";
+import {TabsPage} from "../pages/tabs/tabs";
 
 
 @NgModule({
   declarations: [
     MyApp,
+    TabsPage,
     HomePage,
     ListPage,
     AboutPage,
@@ -83,6 +87,7 @@ import {ArtistProfilePage} from "../pages/artist-profile/artist-profile";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    TabsPage,
     HomePage,
     ListPage,
     AdminLoginPage,

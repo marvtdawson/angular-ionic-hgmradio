@@ -39,8 +39,8 @@ export class RadioPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public siteData: SiteDataProvider,
-              private media: Media,
-              private musicControls: MusicControls,
+              // private media: Media,
+              // private musicControls: MusicControls,
               private platform: Platform,
               private udId: UniqueDeviceID) {
 
@@ -59,8 +59,11 @@ export class RadioPage {
 
     this.getUdId();
 
-    const staticSong = this.trak_source.duration;
-    console.log(staticSong);
+    const staticSong = this.trak_source;
+
+    // this.trak_source.elementType.staticSong;
+
+    console.log('Here is some info about this song ' + this.staticSong );
 
   }
 
@@ -132,13 +135,13 @@ export class RadioPage {
   // We can optionally pass a second argument to track the status of the media
   // let file: MediaObject = this.media.create('file.mp3');
 
-  ionViewDidLoad() {
+  /* ionViewDidLoad() {
     console.log('ionViewDidLoad RadioPage');
     // const audioPlayer = this.audio_controls.nativeElement.value;
 
     // console.log(this.audio_controls.nativeElement.value);
 
-  }
+  } */
 
 
 

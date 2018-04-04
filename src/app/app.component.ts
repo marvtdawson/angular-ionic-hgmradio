@@ -19,6 +19,7 @@ import { NetworkAuthProvider } from "../providers/network-auth/network-auth";
 import { UserAuthProvider } from "../providers/user-auth/user-auth";
 import { AuthenticateService } from "../services/authenticate-service";
 import {ArtistProfilePage} from "../pages/artist-profile/artist-profile";
+import {TabsPage} from "../pages/tabs/tabs";
 
 
 @Component({
@@ -33,6 +34,9 @@ export class MyApp {
   siteName = this.siteData.siteName;
   appVersion = this.siteData.appVersion;
   pushHomePage = HomePage;
+  isAuthenticated = false;
+  tabsPage = TabsPage;
+  loginPage = LoginPage;
 
   pages: Array<{ title: string, component: any }>;
 
@@ -49,16 +53,26 @@ export class MyApp {
               public modalCtrl: ModalController,
               public secureStorage: Storage*/
              ) {
-    firebase.initializeApp({
-      apiKey: "AIzaSyDNkbko2E9nLq2P652SER5Wyyz4wrJffh0",
-      authDomain: "hgmradio-86b55.firebaseapp.com",
-    });
+                firebase.initializeApp({
+                  apiKey: "AIzaSyDNkbko2E9nLq2P652SER5Wyyz4wrJffh0",
+                  authDomain: "hgmradio-86b55.firebaseapp.com",
+                });
+                firebase.auth().onAuthStateChanged(user => {
+                  // check if user is set
+                  if (user) {
+                    this.isAuthenticated = true;
+                    this.nav.setRoot(this.tabsPage);
+                  }else{  // if user is not set
+                    this.isAuthenticated = false;
+                    this.nav.setRoot(this.loginPage);
+                  }
+                });
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
       {title: 'Home', component: HomePage},
-      {title: 'About', component: AboutPage},
+      {title: 'About', component: AboutPage },
       {title: 'Radio', component: RadioPage},
       {title: 'Register', component: RegisterPage},
       {title: 'Login', component: LoginPage},
@@ -78,7 +92,7 @@ export class MyApp {
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;
       } else {
-          this.rootPage = RadioPage;
+          this.rootPage = AboutPage;
       }
       this.loader.dismiss();
     });
@@ -86,7 +100,7 @@ export class MyApp {
     // 2. get user local info service provider
 
 
-  }
+  } // close constructor
 
   /**
    * show Authenticating loader

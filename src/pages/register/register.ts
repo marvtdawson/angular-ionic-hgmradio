@@ -1,7 +1,8 @@
 import {Component, OnInit, OnChanges, SimpleChanges} from '@angular/core';
-import { LoginPage } from '../login/login';
-import { Storage } from "@ionic/storage";
 import { NgForm } from "@angular/forms";
+import { Storage } from "@ionic/storage";
+
+import { LoginPage } from '../login/login';
 
 // Services and Providers
 import { SiteDataProvider } from "../../providers/site-data/site-data";
@@ -61,6 +62,7 @@ export class RegisterPage implements OnInit, OnChanges{
       content: "Registering New User..."
     });
     loading.present();
+
     // send new user email and password to Google Firebase
     this.authService.registerNewUser(form.value.regEmail_1,
                                       form.value.regPw)

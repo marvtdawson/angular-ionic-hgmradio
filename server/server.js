@@ -4,8 +4,9 @@ var logger      = require('morgan');
 var bodyParser  = require('body-parser');
 var cors        = require('cors');
 var mongoose    = require('mongoose');
+var merge       = require('merge');
 
-mongoose.connect('mongodb://localhost/hgmRad1o');
+mongoose.connect('mongodb://localhost/hgmRad10');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
