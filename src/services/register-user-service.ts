@@ -21,7 +21,8 @@ export class RegNewUserService{
           regPw: string){
     // call the model within the push function
     // to allow for the items in the array to be listed individually
-    this.newUser.push(new RegisterUserModel(regFName, regLName, regEmail_1, regPw));
+
+   this.newUser.push(new RegisterUserModel(regFName, regLName, regEmail_1, regPw));
     console.log(this.newUser);
   }
 
