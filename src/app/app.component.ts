@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import {Nav, Platform, LoadingController, MenuController} from 'ionic-angular';
+import {Nav, Platform, LoadingController, MenuController, ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
@@ -45,6 +45,7 @@ export class MyApp {
               public splashScreen: SplashScreen,
               private menuCtrl: MenuController,
               public loadingCtrl: LoadingController,
+              public toastCtrl: ToastController,
               public siteData: SiteDataProvider,
               public networkAuth: NetworkAuthProvider,
               private userAuth: UserAuthProvider,
@@ -64,7 +65,7 @@ export class MyApp {
                     this.nav.setRoot(this.tabsPage);
                   }else{  // if user is not set
                     this.isAuthenticated = false;
-                    this.nav.setRoot(this.loginPage);
+                    this.nav.setRoot(this.rootPage);
                   }
                 });
     this.initializeApp();
@@ -92,9 +93,8 @@ export class MyApp {
       if (isLoggedIn === true) {
         this.rootPage = SplashHomePage;
       } else {
-          this.rootPage = AboutPage;
+          this.rootPage = SplashHomePage;
       }
-      this.loader.dismiss();
     });
 
     // 2. get user local info service provider
@@ -106,10 +106,10 @@ export class MyApp {
    * show Authenticating loader
    */
   presentLoading() {
-    this.loader = this.loadingCtrl.create({
-      content: "Authenticating App..."
-    });
-    this.loader.present();
+    this.loader = this.toastCtrl.create({
+      message: "Authenticating App...",
+      duration: 3000
+    }).present();
   }
 
   // if not a register member, show not a register member loader
