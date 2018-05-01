@@ -38,6 +38,9 @@ export class HomePage {
 
   @ViewChild(Slides) slides: Slides;
 
+  /**
+   * Create go to Slide Function
+   */
   goToSlide(){
     this.slides.slideTo(2, 500);
   }
