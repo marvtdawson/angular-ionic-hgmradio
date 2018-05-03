@@ -26,7 +26,7 @@ import {TabsPage} from "../pages/tabs/tabs";
   templateUrl: 'app.html'
 })
 
-export class MyApp {
+export class HGMRadApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = SplashHomePage; // by default any is = HomePage; - using LoginPage for Authenticating page

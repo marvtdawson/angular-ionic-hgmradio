@@ -29,7 +29,7 @@ import { AuthenticateService } from "../services/authenticate-service";
 import { DataStorageService} from "../services/data-storage-service";
 
 // pages
-import { MyApp } from './app.component';
+import { HGMRadApp } from './app.component';
 import { ProgressBarComponent } from "../components/progress-bar/progress-bar";
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -49,12 +49,12 @@ import { BlogPage } from "../pages/blog/blog";
 import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
 import { ArtistProfilePage } from "../pages/artist-profile/artist-profile";
-import {TabsPage} from "../pages/tabs/tabs";
+import { TabsPage } from "../pages/tabs/tabs";
 
 
 @NgModule({
   declarations: [
-    MyApp,
+    HGMRadApp,
     TabsPage,
     HomePage,
     ListPage,
@@ -78,7 +78,7 @@ import {TabsPage} from "../pages/tabs/tabs";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(HGMRadApp),
     HttpModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
@@ -86,7 +86,7 @@ import {TabsPage} from "../pages/tabs/tabs";
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    HGMRadApp,
     TabsPage,
     HomePage,
     ListPage,

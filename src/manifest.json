@@ -7,7 +7,7 @@
   "lang":"en-US",
   "orientation":"portrait-primary",
   "display": "standalone",
-  "background_color": "#4e8ef7",
+  "background_color": "#000000",
   "theme_color": "#4e8ef7",
   "icons": [
     {

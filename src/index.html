@@ -33,23 +33,22 @@
   </style-->
 
 </head>
-<body>
+  <body>
 
-  <!-- Ionic's root component and where the app will load -->
-  <ion-app></ion-app>
+    <!-- Ionic's root component and where the app will load -->
+    <ion-app></ion-app>
 
+    <!-- The polyfills js is generated during the build process -->
+    <script src="build/polyfills.js"></script>
 
-  <!-- The polyfills js is generated during the build process -->
-  <script src="build/polyfills.js"></script>
+    <!-- Vendor files is everything inside of node_modules -->
+    <script src="build/vendor.js"></script>
 
-  <!-- Vendor files is everything inside of node_modules -->
-  <script src="build/vendor.js"></script>
+    <!-- The bundle js is generated during the build process -->
+    <script src="build/main.js"></script>
 
-  <!-- The bundle js is generated during the build process -->
-  <script src="build/main.js"></script>
+    <!-- The swiper js is generated -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 
-  <!-- The swiper js is generated -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
-
-</body>
+  </body>
 </html>
