@@ -38,6 +38,7 @@ HgmRadio.apk
 Thumbs.db
 UserInterfaceState.xcuserstate
 package-lock.json
+src/app/app.firebase.config.ts
 src/app/app.css
 src/app/app.css.map
 src/pages/page1/page1.css

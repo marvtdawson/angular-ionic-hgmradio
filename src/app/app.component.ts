@@ -33,10 +33,8 @@ export class HGMRadApp {
   loader: any;
   siteName = this.siteData.siteName;
   appVersion = this.siteData.appVersion;
-  pushHomePage = HomePage;
   isAuthenticated = false;
   tabsPage = TabsPage;
-  loginPage = LoginPage;
 
   pages: Array<{ title: string, component: any }>;
 
