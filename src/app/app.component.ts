@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import {Nav, Platform, LoadingController, MenuController, ToastController} from 'ionic-angular';
+import { Nav, Platform, LoadingController, MenuController, ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase';
@@ -18,8 +18,9 @@ import { SiteDataProvider } from "../providers/site-data/site-data";
 import { NetworkAuthProvider } from "../providers/network-auth/network-auth";
 import { UserAuthProvider } from "../providers/user-auth/user-auth";
 import { AuthenticateService } from "../services/authenticate-service";
-import {ArtistProfilePage} from "../pages/artist-profile/artist-profile";
-import {TabsPage} from "../pages/tabs/tabs";
+import { ArtistProfilePage} from "../pages/artist-profile/artist-profile";
+import { TabsPage} from "../pages/tabs/tabs";
+import { FirebaseApp } from "angularfire2";
 
 
 @Component({
@@ -47,11 +48,8 @@ export class HGMRadApp {
               public siteData: SiteDataProvider,
               public networkAuth: NetworkAuthProvider,
               private userAuth: UserAuthProvider,
-              private authService: AuthenticateService
-              /*
-              public modalCtrl: ModalController,
-              public secureStorage: Storage*/
-             ) {
+              private authService: AuthenticateService,
+              private afAuth: FirebaseApp) {
                 firebase.initializeApp({
                   apiKey: "AIzaSyDNkbko2E9nLq2P652SER5Wyyz4wrJffh0",
                   authDomain: "hgmradio-86b55.firebaseapp.com",
@@ -86,14 +84,14 @@ export class HGMRadApp {
     //this.networkAuth.isNetworkStillConnected();
 
     // 2. check if user login information is present
-    this.userAuth.login().then((isLoggedIn) => {
-
-      if (isLoggedIn === true) {
-        this.rootPage = SplashHomePage;
-      } else {
+    this.userAuth.login()
+      .then((isLoggedIn) => {
+        if (isLoggedIn === true) {
           this.rootPage = SplashHomePage;
-      }
-    });
+        } else {
+            this.rootPage = SplashHomePage;
+        }
+      })
 
     // 2. get user local info service provider
 
@@ -130,12 +128,12 @@ export class HGMRadApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-  }
+  };
 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
-  }
+  };
 
 }

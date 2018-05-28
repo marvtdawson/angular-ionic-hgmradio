@@ -50,6 +50,11 @@ import { SplashHomePage } from "../pages/splash-home/splash-home";
 import { RadioPage } from "../pages/radio/radio";
 import { ArtistProfilePage } from "../pages/artist-profile/artist-profile";
 import { TabsPage } from "../pages/tabs/tabs";
+import { AngularFireModule} from "angularfire2";
+import { AngularFireAuthModule} from "angularfire2/auth";
+import { AngularFireDatabase} from "angularfire2/database-deprecated";
+import { AngularFireDatabaseModule} from "angularfire2/database";
+import { FIREBASE_CONFIG} from "./app.firebase.config";
 
 
 @NgModule({
@@ -82,7 +87,10 @@ import { TabsPage } from "../pages/tabs/tabs";
     HttpModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -125,7 +133,8 @@ import { TabsPage } from "../pages/tabs/tabs";
     AuthenticateService,
     DataStorageService,
     UniqueDeviceID,
-    MusicControls
+    MusicControls,
+    AngularFireDatabase
   ]
 })
 export class AppModule {}
