@@ -27,6 +27,7 @@ plugins/android.json
 plugins/ios.json
 www/
 test/
+server/
 $RECYCLE.BIN/
 google-services.json
 ionic-unit-testing-example
